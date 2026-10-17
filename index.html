@@ -48,7 +48,7 @@
     }
 
     .message {
-      background: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.88);
       padding: 22px;
       border-radius: 20px;
       line-height: 1.7;
@@ -94,6 +94,7 @@
 
     .music-button,
     .read-button,
+    .game-button,
     .back-button {
       display: block;
       width: 100%;
@@ -113,6 +114,11 @@
 
     .read-button {
       background: #ff5c8a;
+      color: white;
+    }
+
+    .game-button {
+      background: #f4a261;
       color: white;
     }
 
@@ -156,6 +162,96 @@
       font-weight: bold;
     }
 
+    /* Bored Zone */
+
+    .activity-card {
+      background: white;
+      padding: 18px;
+      border-radius: 18px;
+      margin-top: 15px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+    }
+
+    .activity-card h3 {
+      margin-top: 0;
+      color: #ff5c8a;
+    }
+
+    .random-message {
+      text-align: center;
+      background: #fff3f7;
+      padding: 18px;
+      border-radius: 15px;
+      margin-top: 15px;
+      min-height: 55px;
+      line-height: 1.5;
+    }
+
+    .quiz-question {
+      font-weight: bold;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .quiz-option {
+      width: 100%;
+      border: none;
+      background: #f7f7f7;
+      padding: 12px;
+      border-radius: 12px;
+      margin: 6px 0;
+      text-align: left;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .quiz-option:hover {
+      background: #ffe7ef;
+    }
+
+    .quiz-result {
+      text-align: center;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .pick-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .pick-button {
+      border: none;
+      padding: 14px;
+      border-radius: 13px;
+      background: #f7d6e0;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .heart-game {
+      position: relative;
+      height: 230px;
+      background: #fff5f8;
+      border-radius: 18px;
+      overflow: hidden;
+      margin-top: 12px;
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 30px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .heart-score {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
     @media (max-width: 500px) {
       .mood-grid {
         grid-template-columns: 1fr;
@@ -169,6 +265,7 @@
 <div class="container">
 
   <!-- HOME -->
+
   <div id="home">
 
     <h1>❤️ FOR ANTRAA</h1>
@@ -180,6 +277,7 @@
     <img src="images/p1.jpg" class="hero-photo" alt="Antraa">
 
     <div class="message">
+
       Heyyy Antraaaa ❤️<br><br>
 
       Soo bbygurrlllii, since I can't be there with you right now,
@@ -197,6 +295,7 @@
 
       Now go exploreee everythinggg 👀<br>
       And yes… there <i>might</i> be a few surprises hidden around here hehe. 😭❤️
+
     </div>
 
     <h2 class="section-title">WHAT DO YOU NEED RIGHT NOW? 👀</h2>
@@ -213,7 +312,7 @@
         I need to smile
       </div>
 
-      <div class="mood-card">
+      <div class="mood-card" onclick="openSection('bored')">
         🥱<br>
         I'm really bored
       </div>
@@ -259,7 +358,8 @@
   </div>
 
 
-  <!-- NOT FEELING GOOD -->
+  <!-- 🌸 NOT FEELING GOOD -->
+
   <div id="notGood" class="content-box">
 
     <h2 class="section-title">🌸 For when you're not feeling good</h2>
@@ -315,7 +415,8 @@
   </div>
 
 
-  <!-- I NEED TO SMILE -->
+  <!-- 😂 I NEED TO SMILE -->
+
   <div id="smile" class="content-box">
 
     <h2 class="section-title">😂 For when you need to smile</h2>
@@ -384,7 +485,148 @@
   </div>
 
 
-  <!-- HIDDEN YOUTUBE PLAYERS -->
+  <!-- 🥱 BORED -->
+
+  <div id="bored" class="content-box">
+
+    <h2 class="section-title">🥱 For when you're really bored</h2>
+
+    <button
+      id="boredMusicStart"
+      class="music-button"
+      onclick="startGhungroo()">
+      🎵 Tap to play
+    </button>
+
+    <div id="boredContent" class="hidden-content">
+
+      <div class="message">
+        Heyyy bbyyy 😂❤️<br><br>
+
+        Bore ho rahi hooo?<br>
+        Phone scroll karke thak gayi? 😭<br><br>
+
+        Toh ab meri duty hai aapko thoda entertain karne kii 😂✋<br><br>
+
+        Neeche kuch chhoti chhoti cheezein rakhi hain —
+        kuch funny, kuch random, aur kuch aisi hain jinka koi matlab hi nahi hai 😭<br><br>
+
+        Chalooo ab boredom ko khatam karte hain. 👀👇
+      </div>
+
+
+      <!-- MAKE ME LAUGH -->
+
+      <div class="activity-card">
+
+        <h3>😂 Make Me Laugh</h3>
+
+        <p>
+          Button dabao aur dekho kya random bakwaas milti hai. 😭
+        </p>
+
+        <button
+          class="game-button"
+          onclick="randomLaugh()">
+          😂 Make Me Laugh
+        </button>
+
+        <div id="laughMessage" class="random-message">
+          👀 Press the button...
+        </div>
+
+      </div>
+
+
+      <!-- QUIZ -->
+
+      <div class="activity-card">
+
+        <h3>🧠 How Well Do You Know Me?</h3>
+
+        <div id="quizArea"></div>
+
+        <div id="quizResult" class="quiz-result"></div>
+
+      </div>
+
+
+      <!-- PICK ONE -->
+
+      <div class="activity-card">
+
+        <h3>👀 Pick One</h3>
+
+        <p>Bas jo mann kare choose karo. No thinking. 😂</p>
+
+        <div class="pick-buttons">
+
+          <button class="pick-button" onclick="pickChoice('Dosa wins. Obviously. 😭❤️')">
+            🥞 Dosa
+          </button>
+
+          <button class="pick-button" onclick="pickChoice('Movie nighttt 🎬😂')">
+            🎬 Movie
+          </button>
+
+          <button class="pick-button" onclick="pickChoice('Sleeping wins this round. 😴')">
+            😴 Sleep
+          </button>
+
+          <button class="pick-button" onclick="pickChoice('Okayyy dancer mode ON 💃😂')">
+            💃 Dance
+          </button>
+
+        </div>
+
+        <div id="pickResult" class="random-message">
+          Choose one 👀
+        </div>
+
+      </div>
+
+
+      <!-- CATCH THE HEARTS -->
+
+      <div class="activity-card">
+
+        <h3>❤️ Catch the Hearts</h3>
+
+        <p>
+          Tap the hearts before they disappearrr 😭
+        </p>
+
+        <button
+          class="game-button"
+          onclick="startHeartGame()">
+          ❤️ Start Game
+        </button>
+
+        <div id="heartGame" class="heart-game"></div>
+
+        <div id="heartScore" class="heart-score">
+          Score: 0
+        </div>
+
+      </div>
+
+
+      <button
+        class="read-button"
+        onclick="closeBored()">
+        Done 😂
+      </button>
+
+    </div>
+
+    <div id="boredClosing" class="closing-text">
+      Okayyy, boredom officially cancelled. 😭❤️
+    </div>
+
+  </div>
+
+
+  <!-- YOUTUBE PLAYERS -->
 
   <div class="youtube-box">
 
@@ -408,12 +650,24 @@
       allow="autoplay">
     </iframe>
 
+    <iframe
+      id="ghungrooPlayer"
+      width="1"
+      height="1"
+      src="https://www.youtube.com/embed/qFkNATtc3mc?enablejsapi=1"
+      title="Ghungroo"
+      frameborder="0"
+      allow="autoplay">
+    </iframe>
+
   </div>
 
 </div>
 
 
 <script>
+
+  /* GENERAL SECTION */
 
   function openSection(id) {
 
@@ -432,7 +686,7 @@
   }
 
 
-  /* 🌸 IKtara */
+  /* 🌸 IKTARA */
 
   function startIktara() {
 
@@ -527,6 +781,340 @@
       });
 
     }, 3000);
+  }
+
+
+  /* 🥱 GHUNGROO */
+
+  function startGhungroo() {
+
+    document.getElementById("boredMusicStart").style.display = "none";
+
+    document.getElementById("boredContent").style.display = "block";
+
+    const player = document.getElementById("ghungrooPlayer");
+
+    player.contentWindow.postMessage(
+      '{"event":"command","func":"playVideo","args":""}',
+      "*"
+    );
+
+    setupQuiz();
+  }
+
+
+  function closeBored() {
+
+    document.getElementById("boredClosing").style.display = "block";
+
+    setTimeout(function() {
+
+      const player = document.getElementById("ghungrooPlayer");
+
+      player.contentWindow.postMessage(
+        '{"event":"command","func":"stopVideo","args":""}',
+        "*"
+      );
+
+      document.getElementById("bored").classList.remove("active");
+
+      document.getElementById("boredContent").style.display = "none";
+
+      document.getElementById("boredClosing").style.display = "none";
+
+      document.getElementById("boredMusicStart").style.display = "block";
+
+      document.getElementById("home").style.display = "block";
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    }, 3000);
+  }
+
+
+  /* 😂 RANDOM LAUGH */
+
+  const laughMessages = [
+
+    "Jab hasne ka mann kare toh mera chehra dekh lena 😭✋😂",
+
+    "Paratha incident ko yaad karo... bas. 😭😂",
+
+    "Bathroom ka darwazaa lock kar lenaaa warna sequel fir aa jayega 👻😭",
+
+    "School mein main achanak saamne aa gaya toh iss baar chillana mat 😂✋",
+
+    "Aap jab flirt sunke hasne lagti ho na... haan haan, notice karta hoon 👀😂",
+
+    "Dosa khaane ke baad duniya automatically thodi better lagti hai. 😭❤️",
+
+    "Shinchan dekhne ka mann kar raha hoga abhi. Don't lie. 😂"
+  ];
+
+
+  function randomLaugh() {
+
+    const randomIndex =
+      Math.floor(Math.random() * laughMessages.length);
+
+    document.getElementById("laughMessage").innerText =
+      laughMessages[randomIndex];
+  }
+
+
+  /* 🧠 QUIZ */
+
+  const quizQuestions = [
+
+    {
+      question: "What do I usually do when I suddenly see you at school?",
+      options: [
+        "A. Walk away...",
+        "B. Suddenly appear in front of you 😂",
+        "C. Hide...",
+        "D. Run away..."
+      ],
+      answer: 1
+    },
+
+    {
+      question: "What happens when I flirt with you?",
+      options: [
+        "A. Ignore",
+        "B. Angry",
+        "C. Start laughing",
+        "D. Disappear"
+      ],
+      answer: 2
+    },
+
+    {
+      question: "What food do you like the most?",
+      options: [
+        "A. Pizza",
+        "B. Dosa",
+        "C. Burger",
+        "D. Maggi"
+      ],
+      answer: 1
+    },
+
+    {
+      question: "What cartoon do you like?",
+      options: [
+        "A. Doraemon",
+        "B. Shinchan",
+        "C. Tom & Jerry",
+        "D. Oggy"
+      ],
+      answer: 1
+    },
+
+    {
+      question: "What happens when you see a stray dog? 🐕",
+      options: [
+        "A. Aage hi nahi badh paati, ekdum darr se paani-paani ho jaati ho 😭",
+        "B. Awww cute!",
+        "C. Run toward it",
+        "D. Try to pet it"
+      ],
+      answer: 0
+    },
+
+    {
+      question: "What do I think you should be doing instead of scrolling your phone right now? 👀",
+      options: [
+        "A. Sleeping 😴",
+        "B. Eating dosa",
+        "C. Dancing 💃",
+        "D. Playing mobile games 🎮"
+      ],
+      answer: 0
+    }
+
+  ];
+
+
+  let quizIndex = 0;
+  let quizScore = 0;
+
+
+  function setupQuiz() {
+
+    quizIndex = 0;
+    quizScore = 0;
+
+    document.getElementById("quizResult").innerText = "";
+
+    showQuizQuestion();
+  }
+
+
+  function showQuizQuestion() {
+
+    const area = document.getElementById("quizArea");
+
+    if (quizIndex >= quizQuestions.length) {
+
+      area.innerHTML = "";
+
+      document.getElementById("quizResult").innerHTML =
+        "🎉 QUIZ COMPLETE<br><br>" +
+        "Okayyy madammm, not bad 👀😂<br>" +
+        "Lagta hai mujhe kaafi observe kiya hai aapne. 😭<br><br>" +
+        "Score: " + quizScore + "/6<br><br>" +
+        "Ab jaooo... so jaooo 😭✋";
+
+      return;
+    }
+
+
+    const q = quizQuestions[quizIndex];
+
+    let html =
+      "<div class='quiz-question'>" +
+      "Q" + (quizIndex + 1) + ". " +
+      q.question +
+      "</div>";
+
+    q.options.forEach(function(option, index) {
+
+      html +=
+        "<button class='quiz-option' onclick='answerQuiz(" +
+        index +
+        ")'>" +
+        option +
+        "</button>";
+
+    });
+
+    area.innerHTML = html;
+  }
+
+
+  function answerQuiz(selected) {
+
+    if (selected === quizQuestions[quizIndex].answer) {
+
+      quizScore++;
+
+      document.getElementById("quizResult").innerText =
+        "Correcttt 😭❤️";
+
+    } else {
+
+      document.getElementById("quizResult").innerText =
+        "Wronggg 😂✋";
+
+    }
+
+    quizIndex++;
+
+    setTimeout(function() {
+
+      showQuizQuestion();
+
+    }, 500);
+  }
+
+
+  /* 👀 PICK ONE */
+
+  function pickChoice(text) {
+
+    document.getElementById("pickResult").innerText = text;
+  }
+
+
+  /* ❤️ HEART GAME */
+
+  let heartScore = 0;
+  let heartTimer;
+
+
+  function startHeartGame() {
+
+    const game = document.getElementById("heartGame");
+
+    game.innerHTML = "";
+
+    heartScore = 0;
+
+    document.getElementById("heartScore").innerText =
+      "Score: 0";
+
+    createHeart();
+
+    clearInterval(heartTimer);
+
+    heartTimer = setInterval(function() {
+
+      createHeart();
+
+    }, 800);
+
+
+    setTimeout(function() {
+
+      clearInterval(heartTimer);
+
+      game.innerHTML =
+        "<div style='text-align:center;padding-top:90px;font-weight:bold;'>" +
+        "Game Over 😭❤️<br><br>" +
+        "Final Score: " +
+        heartScore +
+        "</div>";
+
+    }, 10000);
+  }
+
+
+  function createHeart() {
+
+    const game = document.getElementById("heartGame");
+
+    if (!document.getElementById("bored").classList.contains("active")) {
+      return;
+    }
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.innerText = "❤️";
+
+    heart.style.left =
+      Math.random() * 85 + "%";
+
+    heart.style.top =
+      Math.random() * 80 + "%";
+
+
+    heart.onclick = function() {
+
+      heartScore++;
+
+      document.getElementById("heartScore").innerText =
+        "Score: " + heartScore;
+
+      heart.remove();
+
+    };
+
+
+    game.appendChild(heart);
+
+
+    setTimeout(function() {
+
+      if (heart.parentElement) {
+        heart.remove();
+      }
+
+    }, 1200);
   }
 
 </script>
