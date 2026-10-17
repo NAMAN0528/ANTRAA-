@@ -162,6 +162,53 @@
       font-weight: bold;
     }
 
+    /* COUPON BOOK */
+
+    .coupon-card {
+      background: linear-gradient(135deg, #fff, #fff4f8);
+      padding: 24px 20px;
+      border-radius: 20px;
+      margin-top: 18px;
+      box-shadow: 0 7px 22px rgba(0,0,0,0.08);
+      border: 2px dashed #ff9fba;
+      position: relative;
+    }
+
+    .coupon-card h3 {
+      color: #ff5c8a;
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 19px;
+    }
+
+    .coupon-card p {
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .coupon-status {
+      background: #fff0f5;
+      padding: 10px;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: bold;
+      color: #ff5c8a;
+      margin-top: 15px;
+    }
+
+    .coupon-bonus {
+      background: white;
+      padding: 24px 20px;
+      border-radius: 20px;
+      margin-top: 25px;
+      box-shadow: 0 7px 22px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .coupon-bonus h3 {
+      color: #ff5c8a;
+    }
+
     /* BORED ZONE */
 
     .activity-card {
@@ -327,18 +374,13 @@
         I'm sleepy
       </div>
 
-      <div class="mood-card">
-        💗<br>
-        I just want something nice
-      </div>
-
     </div>
 
     <h2 class="section-title">Or maybe... 👀</h2>
 
     <div class="mood-grid">
 
-      <div class="mood-card">
+      <div class="mood-card" onclick="openSection('coupons')">
         🎟️<br>
         Your Coupon Book
       </div>
@@ -695,7 +737,9 @@
 
       </div>
 
-      <button class="read-button" onclick="closeMissYou()">
+      <button
+        class="read-button"
+        onclick="closeMissYou()">
         Read 🫂
       </button>
 
@@ -760,6 +804,171 @@
   </div>
 
 
+  <!-- 🎟️ COUPON BOOK -->
+
+  <div id="coupons" class="content-box">
+
+    <h2 class="section-title">🎟️ Your Little Coupon Book</h2>
+
+    <div class="coupon-card">
+
+      <h3>🎟️ ONE FREE HUG 🫂</h3>
+
+      <p>
+        This coupon can be redeemed whenever we meet.<br>
+        No expiry date. No questions asked. 😂❤️
+      </p>
+
+      <p>
+        Just one proper hug, whenever you feel like you need one.
+      </p>
+
+      <div class="coupon-status">
+        Status: Saved for later 👀
+      </div>
+
+    </div>
+
+
+    <div class="coupon-card">
+
+      <h3>🎟️ YOU PICK THE MOVIE 🎬</h3>
+
+      <p>
+        One movie of your choice.<br>
+        And yes, I'll actually watch it properly. 😭😂
+      </p>
+
+      <p>
+        Even if you choose something I've never heard of,
+        you get to decide what we watch.
+      </p>
+
+      <div class="coupon-status">
+        Status: Your choice. Unfortunately. 😔✋
+      </div>
+
+    </div>
+
+
+    <div class="coupon-card">
+
+      <h3>🎟️ SNACK PASS 🍫</h3>
+
+      <p>
+        One snack of your choice whenever we get the chance.
+      </p>
+
+      <p>
+        And since I know you like good food...
+        please don't choose something that costs my entire life savings. 😭😂
+      </p>
+
+      <p>
+        You choose the snack, I'll handle the rest.
+      </p>
+
+      <div class="coupon-status">
+        Status: Valid whenever applicable.
+      </div>
+
+    </div>
+
+
+    <div class="coupon-card">
+
+      <h3>🎟️ ONE DAY OF PEACE 😌</h3>
+
+      <p>
+        For one whole day, I promise I'll try not to annoy you.
+      </p>
+
+      <p>
+        No sudden appearances. No unnecessary teasing.
+        No disturbing you for absolutely no reason. 😂
+      </p>
+
+      <p>
+        Although... I can make <b>no guarantees</b>
+        about how long I actually survive without annoying you. 😭✋
+      </p>
+
+      <div class="coupon-status">
+        Status: Use wisely.
+      </div>
+
+    </div>
+
+
+    <div class="coupon-card">
+
+      <h3>🎟️ YOUR CHOICE 👑</h3>
+
+      <p>
+        For one time, you get complete control.
+      </p>
+
+      <p>
+        You choose what we do, where we go, what we eat,
+        or what movie we watch.
+      </p>
+
+      <p>
+        I get <b>zero complaints.</b>
+      </p>
+
+      <p>
+        ...Okay fine, maybe one tiny complaint. 😂❤️
+      </p>
+
+      <div class="coupon-status">
+        Status: Extremely dangerous coupon. Use wisely. 👀
+      </div>
+
+    </div>
+
+
+    <!-- 🎵 USKA HI BANANA -->
+
+    <div class="coupon-bonus">
+
+      <h3>🎵 A Little Music Bonus ❤️</h3>
+
+      <p>
+        Okayyy, since you've reached the end of the coupon book...
+      </p>
+
+      <p>
+        Here's a little song for youuu. 🫶🏻
+      </p>
+
+      <button
+        id="couponMusicStart"
+        class="music-button"
+        onclick="startCouponMusic()">
+        🎵 Play Uska Hi Banana
+      </button>
+
+      <button
+        id="couponMusicStop"
+        class="read-button"
+        onclick="stopCouponMusic()"
+        style="display:none;">
+        ⏹️ Stop Music
+      </button>
+
+    </div>
+
+
+    <button
+      class="back-button"
+      onclick="closeCoupons()">
+      ← Back to home
+    </button>
+
+  </div>
+
+
   <!-- YOUTUBE PLAYERS -->
 
   <div class="youtube-box">
@@ -810,6 +1019,16 @@
       height="1"
       src="https://www.youtube.com/embed/gPpQNzQP6gE?enablejsapi=1"
       title="Nadaaniyan"
+      frameborder="0"
+      allow="autoplay">
+    </iframe>
+
+    <iframe
+      id="uskaHiBananaPlayer"
+      width="1"
+      height="1"
+      src="https://www.youtube.com/embed/x66LfjYJa2k?enablejsapi=1"
+      title="Uska Hi Banana"
       frameborder="0"
       allow="autoplay">
     </iframe>
@@ -1084,6 +1303,53 @@
       });
 
     }, 3000);
+  }
+
+
+  /* 🎟️ COUPON BOOK */
+
+  function startCouponMusic() {
+
+    document.getElementById("couponMusicStart").style.display = "none";
+
+    document.getElementById("couponMusicStop").style.display = "block";
+
+    const player = document.getElementById("uskaHiBananaPlayer");
+
+    player.contentWindow.postMessage(
+      '{"event":"command","func":"playVideo","args":""}',
+      "*"
+    );
+  }
+
+
+  function stopCouponMusic() {
+
+    const player = document.getElementById("uskaHiBananaPlayer");
+
+    player.contentWindow.postMessage(
+      '{"event":"command","func":"stopVideo","args":""}',
+      "*"
+    );
+
+    document.getElementById("couponMusicStop").style.display = "none";
+
+    document.getElementById("couponMusicStart").style.display = "block";
+  }
+
+
+  function closeCoupons() {
+
+    stopCouponMusic();
+
+    document.getElementById("coupons").classList.remove("active");
+
+    document.getElementById("home").style.display = "block";
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   }
 
 
