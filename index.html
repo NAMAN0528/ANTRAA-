@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Antraa ❤️</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(180deg, #fff5f8 0%, #ffe7ef 100%);
+            color: #333;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 520px;
+            margin: 0 auto;
+            padding: 22px 16px 40px;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            background: rgba(255, 255, 255, 0.88);
+            padding: 30px 20px;
+            border-radius: 28px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .heart {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 32px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .intro {
+            font-size: 16px;
+            line-height: 1.75;
+        }
+
+        /* =========================
+           HEADINGS
+        ========================= */
+
+        .section-title {
+            text-align: center;
+            font-size: 24px;
+            line-height: 1.3;
+            margin: 32px 0 18px;
+        }
+
+        /* =========================
+           MOOD CARDS
+        ========================= */
+
+        .mood-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        .mood-card {
+            width: 100%;
+            min-height: 82px;
+            border: none;
+            border-radius: 22px;
+            background: white;
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            text-align: left;
+            font-size: 17px;
+            font-weight: 600;
+            color: #333;
+            cursor: pointer;
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.07);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .mood-card:active {
+            transform: scale(0.97);
+        }
+
+        .emoji {
+            flex-shrink: 0;
+            font-size: 34px;
+        }
+
+        /* =========================
+           OR MAYBE
+        ========================= */
+
+        .maybe {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        .maybe-card {
+            min-height: 78px;
+            padding: 20px;
+            border-radius: 22px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.07);
+            transition: transform 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .maybe-card:active {
+            transform: scale(0.97);
+        }
+
+        /* =========================
+           CONTENT SECTIONS
+        ========================= */
+
+        .content-box {
+            display: none;
+            margin-top: 28px;
+            background: white;
+            padding: 28px 20px;
+            border-radius: 26px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            animation: appear 0.35s ease;
+        }
+
+        .content-box.active {
+            display: block;
+        }
+
+        .content-box h2 {
+            font-size: 25px;
+            margin-bottom: 18px;
+            line-height: 1.3;
+        }
+
+        .content-box p {
+            font-size: 16px;
+            line-height: 1.75;
+        }
+
+        /* =========================
+           BACK BUTTON
+        ========================= */
+
+        .back-btn {
+            margin-top: 25px;
+            padding: 13px 22px;
+            min-height: 48px;
+            border: none;
+            border-radius: 24px;
+            background: #333;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .back-btn:active {
+            transform: scale(0.96);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+            margin-top: 45px;
+            padding: 15px 5px;
+            font-size: 13px;
+            opacity: 0.65;
+        }
+
+        /* =========================
+           ANIMATION
+        ========================= */
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================
+           SMALL PHONES
+        ========================= */
+
+        @media (max-width: 360px) {
+
+            .container {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .hero {
+                padding: 26px 17px;
+            }
+
+            .intro {
+                font-size: 15px;
+            }
+
+            .section-title {
+                font-size: 22px;
+            }
+
+            .mood-card {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- =========================
+             HERO / HOMEPAGE
+        ========================= -->
+
+        <section class="hero">
+
+            <div class="heart">❤️</div>
+
+            <h1>Heyyy Antraaaa ❤️</h1>
+
+            <p class="intro">
+                Soo bbygurrlllii, since I can't be there with you right now,
+                I thought why not make you something of my own insteadtt 😭❤️
+                <br><br>
+
+                It's nothing too biggg kyukii aap too jada bada dekk kee
+                pura alas ho jaoge or avi k time to or ni man krega pdhnee kaa
+                so something simplee being normall not over dramatic and being real,
+                just a small little place made specially for youuu bbyy.
+                <br><br>
+
+                You can come here whenever you're bored, whenever you want a
+                little smile, or whenever you just wanna see what stupid things
+                I've put here for you 😂
+                <br><br>
+
+                So yeahhh bbyy, welcome to your little corner. 🫶🏻
+                <br><br>
+
+                Now go exploreee everythinggg 👀
+                <br>
+                And yes… there <i>might</i> be a few surprises hidden around here hehe. 😭❤️
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             MOOD SELECTION
+        ========================= -->
+
+        <h2 class="section-title">
+            WHAT DO YOU NEED RIGHT NOW? 👀
+        </h2>
+
+        <section class="mood-grid">
+
+            <button class="mood-card" onclick="openSection('not-good')">
+                <span class="emoji">🌸</span>
+                <span>I'm not feeling good</span>
+            </button>
+
+            <button class="mood-card" onclick="openSection('smile')">
+                <span class="emoji">😂</span>
+                <span>I need to smile</span>
+            </button>
+
+            <button class="mood-card" onclick="openSection('bored')">
+                <span class="emoji">🥱</span>
+                <span>I'm really bored</span>
+            </button>
+
+            <button class="mood-card" onclick="openSection('miss')">
+                <span class="emoji">🫂</span>
+                <span>I miss you</span>
+            </button>
+
+            <button class="mood-card" onclick="openSection('sleepy')">
+                <span class="emoji">😴</span>
+                <span>I'm sleepy</span>
+            </button>
+
+            <button class="mood-card" onclick="openSection('nice')">
+                <span class="emoji">💗</span>
+                <span>I just want something nice</span>
+            </button>
+
+        </section>
+
+
+        <!-- =========================
+             OR MAYBE
+        ========================= -->
+
+        <h2 class="section-title">
+            OR MAYBE… 👀
+        </h2>
+
+        <section class="maybe">
+
+            <div class="maybe-card" onclick="openSection('coupons')">
+                🎟️ &nbsp; Your Coupon Book
+            </div>
+
+            <div class="maybe-card" onclick="openSection('memories')">
+                📸 &nbsp; Our Little Memories
+            </div>
+
+            <div class="maybe-card" onclick="openSection('random')">
+                🎲 &nbsp; Something Random
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MOOD CONTENT
+        ========================= -->
+
+        <section id="not-good" class="content-box">
+
+            <h2>🌸 Take It Easyyy</h2>
+
+            <p>
+                Heyyy bbyy ❤️
+                <br><br>
+
+                Agar aap ye wala open kar rahi h toh probably aaj thoda sa
+                mood off hai ya tabiyat achhi nahi lag rahi hogiii 😭
+                <br><br>
+
+                So firsttt — thoda rest kar, comfy ho jaa and apna
+                dhyaan rakhnaaa. 🌸
+                <br><br>
+
+                Aur haannn, smile thodaaa sa. ❤️
+            </p>
+
+            <button class="back-btn" onclick="goHome()">
+                ← Back
+            </button>
+
+        </section>
+
+
+        <section id="smile" class="content-box">
+
+            <h2>😂 Okayyy, Let's Fix That Mood</h2>
+
+            <p>
+                Heyyy bbygurrlllii 😂❤️
+                <br><br>
+
+                Jab hasne ka mann krr rhaa ho mera chehra dekh lena 😭✋😂
+                <br><br>
+
+                Parathaaa incident still hasn't been forgotten. 😭😂
+            </p>
+
+            <button class="back-btn" onclick="goHome()">
+                ← Back
+            </button>
+
+        </section>
+
+
+        <section id="bored" class="content-box">
+
+            <h2>🥱 Bored Alreadyyy?</h2>
+
+            <p>
+                Don't worryyy, something fun is coming here. 👀
+                <br><br>
+
+                Mini games, random questions and stupid things incominggg 😂
+            </p>
+
+            <button class="back-btn" onclick="goHome()">
+                ← Back
+            </button>
+
+        </section>
+
+
+        <section id="miss" class="content-box">
+
+            <h2>🫂 You Miss Me?</h2>
+
+            <p>
+                Hmmm suspiciousss... 👀😂
+                <br><br>
+
+                Kabhi call pe baat karte hue, kabhi text karte hue,
+                kabhi school mein aapko dekh ke...
+                <br><br>
+
+                bas ye chhoti chhoti cheezein bhi mere liye memories
+                ban jaati hain. ❤️
+            </p>
+
+            <button class="back-btn" onclick="goHome()">
+                ← Back
+            </button>
+
+        </section>
+
+
+        <section id="sleepy" class="content-box">
+
+            <h2>😴 Go Sleepkkk</h2>
+
+            <p>
+                Okayyy madammm, phone side mein rakhooo 😭✋
+                <br><br>
+
+                Kal firr bakchodi karenge. 😂❤️
+            </p>
+
+            <button class="back-btn" onclick="goHome()">
+                ← Back
+            </button>
+
+        </section>
+
+
+        <section id="nice" class="content-box">
+
+            <h2>💗 Something Nice</h2>
+
+            <p>
+                Bas aise hi... kyukii aap deserve karti ho
+                thodaaa sa extra happiness. ❤️
+            </p>
+
+            <button class="back-btn" onclick="goHome()">
+                ← Back
+            </button>
+
+        </section>
+
+
+        <!-- =========================
+             OTHER SECTIONS
+        ========================= -->
+
+        <section id="coupons" class="content-box">
+
+            <h2>🎟️ Your Coupon Book</h2>
+
+            <p>
+                Your little collection of totally legitimate coupons. 👀😂
+                <br><br>
+
+                We'll build all five coupons here next.
+            </p>
+
+            <button class="back-btn" onclick="goHome()">
+                ← Back
+            </button>
+
+        </section>
+
+
+        <section id="memories" class="content-box">
+
+            <h2>📸 Our Little Memories</h2>
+
+            <p>
+                We've only known each other for a little while...
+                but somehow there are already so many small moments
+                worth remembering. ❤️
+                <br><br>
+
+                We'll add the photos here next.
+            </p>
+
+            <button class="back-btn" onclick="goHome()">
+                ← Back
+            </button>
+
+        </section>
+
+
+        <section id="random" class="content-box">
+
+            <h2>🎲 Something Random</h2>
+
+            <p>
+                You clicked it. 👀
+                <br><br>
+
+                Now you have to find out what's inside. 😂
+            </p>
+
+            <button class="back-btn" onclick="goHome()">
+                ← Back
+            </button>
+
+        </section>
+
+
+        <footer>
+            Made specially for Antraa ❤️
+        </footer>
+
+    </main>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        function openSection(id) {
+
+            // Hide every section
+            document.querySelectorAll(".content-box").forEach(function(box) {
+                box.classList.remove("active");
+            });
+
+            // Open selected section
+            const section = document.getElementById(id);
+
+            section.classList.add("active");
+
+            // Scroll to it
+            setTimeout(function() {
+                section.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }, 50);
+        }
+
+
+        function goHome() {
+
+            // Hide all sections
+            document.querySelectorAll(".content-box").forEach(function(box) {
+                box.classList.remove("active");
+            });
+
+            // Return to top
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+
+    </script>
+
+</body>
+</html>
