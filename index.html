@@ -39,7 +39,6 @@
     .hero-photo {
       width: 100%;
       height: auto;
-      max-height: none;
       object-fit: contain;
       border-radius: 22px;
       margin-bottom: 20px;
@@ -162,7 +161,10 @@
       font-weight: bold;
     }
 
-    /* COUPON BOOK */
+
+    /* =====================================================
+       COUPON BOOK
+    ===================================================== */
 
     .coupon {
       background: linear-gradient(135deg, #fff7fa, #fff);
@@ -192,7 +194,162 @@
       font-style: italic;
     }
 
-    /* BORED ZONE */
+
+    /* =====================================================
+       MEMORIES ALBUM
+    ===================================================== */
+
+    .memory-album {
+      position: relative;
+      margin-top: 20px;
+      padding: 15px 5px 25px;
+      overflow: hidden;
+    }
+
+    .album-intro {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .album-intro h3 {
+      color: #ff5c8a;
+      margin-bottom: 8px;
+      font-size: 22px;
+    }
+
+    .album-intro p {
+      color: #777;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .memory-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px 18px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .memory-card {
+      background: #fff;
+      padding: 10px 10px 16px;
+      border-radius: 4px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.13);
+      transition: transform 0.25s ease;
+      position: relative;
+    }
+
+    .memory-card:hover {
+      transform: scale(1.03) rotate(0deg) !important;
+      z-index: 5;
+    }
+
+    .memory-card:nth-child(odd) {
+      transform: rotate(-2.5deg);
+    }
+
+    .memory-card:nth-child(even) {
+      transform: rotate(2.5deg);
+    }
+
+    .memory-card:nth-child(3) {
+      transform: rotate(1.5deg);
+    }
+
+    .memory-card:nth-child(4) {
+      transform: rotate(-2deg);
+    }
+
+    .memory-card:nth-child(5) {
+      transform: rotate(-1.5deg);
+    }
+
+    .memory-card:nth-child(6) {
+      transform: rotate(2deg);
+    }
+
+    .memory-card:nth-child(7) {
+      transform: rotate(-2deg);
+    }
+
+    .memory-card:nth-child(8) {
+      transform: rotate(2deg);
+    }
+
+    .memory-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 2px;
+      display: block;
+      margin: 0;
+      box-shadow: none;
+    }
+
+    .memory-caption {
+      text-align: center;
+      padding-top: 12px;
+      font-family: "Comic Sans MS", cursive;
+      color: #777;
+      font-size: 13px;
+    }
+
+    .album-bottom {
+      text-align: center;
+      margin-top: 30px;
+      padding: 20px;
+      background: rgba(255,255,255,0.8);
+      border-radius: 18px;
+      line-height: 1.7;
+      position: relative;
+      z-index: 3;
+    }
+
+    /*
+      Floating hearts
+    */
+
+    .floating-heart {
+      position: absolute;
+      font-size: 18px;
+      opacity: 0.65;
+      pointer-events: none;
+      z-index: 1;
+      animation: floatHeart linear infinite;
+    }
+
+    @keyframes floatHeart {
+
+      0% {
+        transform: translateY(30px) rotate(0deg);
+        opacity: 0;
+      }
+
+      15% {
+        opacity: 0.7;
+      }
+
+      50% {
+        transform: translateY(-80px) rotate(12deg);
+        opacity: 0.65;
+      }
+
+      85% {
+        opacity: 0.35;
+      }
+
+      100% {
+        transform: translateY(-170px) rotate(-12deg);
+        opacity: 0;
+      }
+
+    }
+
+
+    /* =====================================================
+       BORED ZONE
+    ===================================================== */
 
     .activity-card {
       background: white;
@@ -282,19 +439,44 @@
       margin-top: 10px;
     }
 
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
     @media (max-width: 500px) {
+
       .mood-grid {
         grid-template-columns: 1fr;
       }
+
+      .memory-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px 14px;
+      }
+
+      .memory-card {
+        padding: 8px 8px 13px;
+      }
+
+      .memory-caption {
+        font-size: 11px;
+      }
+
     }
+
   </style>
 </head>
+
 
 <body>
 
 <div class="container">
 
-  <!-- ================= HOME ================= -->
+
+  <!-- =====================================================
+       HOME
+  ===================================================== -->
 
   <div id="home">
 
@@ -304,7 +486,11 @@
       A little place made specially for youuu 🫶🏻
     </div>
 
-    <img src="images/p1.jpg" class="hero-photo" alt="Antraa">
+    <img
+      src="images/p1.jpg"
+      class="hero-photo"
+      alt="Antraa">
+
 
     <div class="message">
 
@@ -328,7 +514,11 @@
 
     </div>
 
-    <h2 class="section-title">WHAT DO YOU NEED RIGHT NOW? 👀</h2>
+
+    <h2 class="section-title">
+      WHAT DO YOU NEED RIGHT NOW? 👀
+    </h2>
+
 
     <div class="mood-grid">
 
@@ -359,7 +549,11 @@
 
     </div>
 
-    <h2 class="section-title">Or maybe... 👀</h2>
+
+    <h2 class="section-title">
+      Or maybe... 👀
+    </h2>
+
 
     <div class="mood-grid">
 
@@ -368,7 +562,7 @@
         Your Coupon Book
       </div>
 
-      <div class="mood-card">
+      <div class="mood-card" onclick="openSection('memories')">
         📸<br>
         Our Little Memories
       </div>
@@ -383,19 +577,25 @@
   </div>
 
 
-  <!-- ================= NOT FEELING GOOD ================= -->
+  <!-- =====================================================
+       NOT FEELING GOOD
+  ===================================================== -->
 
   <div id="notGood" class="content-box">
 
-    <h2 class="section-title">🌸 For You</h2>
+    <h2 class="section-title">
+      🌸 For You
+    </h2>
 
     <button class="music-button" onclick="startNotGood()">
       🎵 Tap to play
     </button>
 
+
     <div id="notGoodContent" class="hidden-content">
 
       <div class="youtube-box">
+
         <iframe
           id="notGoodPlayer"
           width="1"
@@ -403,9 +603,14 @@
           src="https://www.youtube.com/embed/2Vv-BfVoq4g?enablejsapi=1"
           allow="autoplay">
         </iframe>
+
       </div>
 
-      <img src="images/p2.jpg" class="section-photo">
+
+      <img
+        src="images/p2.jpg"
+        class="section-photo">
+
 
       <div class="message">
 
@@ -431,15 +636,18 @@
 
       </div>
 
+
       <button class="read-button" onclick="closeNotGood()">
         Read ❤️
       </button>
+
 
       <div id="notGoodClosing" class="closing-text">
         Bas ab thoda rest karnaaa bbyy. ❤️
       </div>
 
     </div>
+
 
     <button class="back-button" onclick="goHome()">
       ← Back
@@ -448,19 +656,25 @@
   </div>
 
 
-  <!-- ================= NEED TO SMILE ================= -->
+  <!-- =====================================================
+       SMILE
+  ===================================================== -->
 
   <div id="smile" class="content-box">
 
-    <h2 class="section-title">😂 Okayyy, Smile Time</h2>
+    <h2 class="section-title">
+      😂 Okayyy, Smile Time
+    </h2>
 
     <button class="music-button" onclick="startSmile()">
       🎵 Tap to play
     </button>
 
+
     <div id="smileContent" class="hidden-content">
 
       <div class="youtube-box">
+
         <iframe
           id="smilePlayer"
           width="1"
@@ -468,11 +682,19 @@
           src="https://www.youtube.com/embed/2Vv-BfVoq4g?enablejsapi=1"
           allow="autoplay">
         </iframe>
+
       </div>
 
-      <img src="images/p3.jpg" class="section-photo funny-photo">
 
-      <img src="images/p4.jpg" class="section-photo funny-photo">
+      <img
+        src="images/p3.jpg"
+        class="section-photo funny-photo">
+
+
+      <img
+        src="images/p4.jpg"
+        class="section-photo funny-photo">
+
 
       <div class="message">
 
@@ -513,15 +735,18 @@
 
       </div>
 
+
       <button class="read-button" onclick="closeSmile()">
         Read ❤️
       </button>
+
 
       <div id="smileClosing" class="closing-text">
         Bas ab smile karte rehnaaa. 😂❤️
       </div>
 
     </div>
+
 
     <button class="back-button" onclick="goHome()">
       ← Back
@@ -530,19 +755,25 @@
   </div>
 
 
-  <!-- ================= BORED ================= -->
+  <!-- =====================================================
+       BORED
+  ===================================================== -->
 
   <div id="bored" class="content-box">
 
-    <h2 class="section-title">🥱 Bored Already?</h2>
+    <h2 class="section-title">
+      🥱 Bored Already?
+    </h2>
 
     <button class="music-button" onclick="startGhungroo()">
       🎵 Tap to play
     </button>
 
+
     <div id="boredContent" class="hidden-content">
 
       <div class="youtube-box">
+
         <iframe
           id="ghungrooPlayer"
           width="1"
@@ -550,7 +781,9 @@
           src="https://www.youtube.com/embed/qFkNATtc3mc?enablejsapi=1"
           allow="autoplay">
         </iframe>
+
       </div>
+
 
       <div class="activity-card">
 
@@ -622,11 +855,13 @@
         Done ❤️
       </button>
 
+
       <div id="boredClosing" class="closing-text">
         Okayyy, ab bore hona band karo 😂❤️
       </div>
 
     </div>
+
 
     <button class="back-button" onclick="goHome()">
       ← Back
@@ -635,19 +870,25 @@
   </div>
 
 
-  <!-- ================= MISS YOU ================= -->
+  <!-- =====================================================
+       MISS YOU
+  ===================================================== -->
 
   <div id="missYou" class="content-box">
 
-    <h2 class="section-title">🫂 You Miss Me?</h2>
+    <h2 class="section-title">
+      🫂 You Miss Me?
+    </h2>
 
     <button class="music-button" onclick="startMissYou()">
       🎵 Tap to play
     </button>
 
+
     <div id="missYouContent" class="hidden-content">
 
       <div class="youtube-box">
+
         <iframe
           id="missYouPlayer"
           width="1"
@@ -655,11 +896,19 @@
           src="https://www.youtube.com/embed/qFkNATtc3mc?enablejsapi=1"
           allow="autoplay">
         </iframe>
+
       </div>
 
-      <img src="images/p5.jpg" class="section-photo">
 
-      <img src="images/p6.jpg" class="section-photo">
+      <img
+        src="images/p5.jpg"
+        class="section-photo">
+
+
+      <img
+        src="images/p6.jpg"
+        class="section-photo">
+
 
       <div class="message">
 
@@ -698,15 +947,18 @@
 
       </div>
 
+
       <button class="read-button" onclick="closeMissYou()">
         Read ❤️
       </button>
+
 
       <div id="missYouClosing" class="closing-text">
         Ab itna yaad bhi mat karnaaa 😂❤️
       </div>
 
     </div>
+
 
     <button class="back-button" onclick="goHome()">
       ← Back
@@ -715,19 +967,25 @@
   </div>
 
 
-  <!-- ================= SLEEPY ================= -->
+  <!-- =====================================================
+       SLEEPY
+  ===================================================== -->
 
   <div id="sleepy" class="content-box">
 
-    <h2 class="section-title">😴 Sleepy Time</h2>
+    <h2 class="section-title">
+      😴 Sleepy Time
+    </h2>
 
     <button class="music-button" onclick="startSleepy()">
       🎵 Tap to play
     </button>
 
+
     <div id="sleepyContent" class="hidden-content">
 
       <div class="youtube-box">
+
         <iframe
           id="sleepyPlayer"
           width="1"
@@ -735,9 +993,14 @@
           src="https://www.youtube.com/embed/2Vv-BfVoq4g?enablejsapi=1"
           allow="autoplay">
         </iframe>
+
       </div>
 
-      <img src="images/p7.jpg" class="section-photo">
+
+      <img
+        src="images/p7.jpg"
+        class="section-photo">
+
 
       <div class="message">
 
@@ -760,15 +1023,18 @@
 
       </div>
 
+
       <button class="read-button" onclick="closeSleepy()">
         Read ❤️
       </button>
+
 
       <div id="sleepyClosing" class="closing-text">
         Ab phone rakho aur so jaooo. 😭❤️
       </div>
 
     </div>
+
 
     <button class="back-button" onclick="goHome()">
       ← Back
@@ -777,18 +1043,20 @@
   </div>
 
 
-  <!-- ================= COUPON BOOK ================= -->
+  <!-- =====================================================
+       COUPON BOOK
+  ===================================================== -->
 
   <div id="couponBook" class="content-box">
 
-    <h2 class="section-title">🎟️ Your Coupon Book</h2>
+    <h2 class="section-title">
+      🎟️ Your Coupon Book
+    </h2>
 
-    <!-- IMPORTANT:
-         Coupons are hidden until music starts. -->
-
-    <button class="music-button" id="couponMusicButton" onclick="startCouponBook()">
+    <button class="music-button" onclick="startCouponBook()">
       🎵 Tap to play
     </button>
+
 
     <div id="couponContent" class="hidden-content">
 
@@ -817,8 +1085,6 @@
       </div>
 
 
-      <!-- COUPON 1 -->
-
       <div class="coupon">
 
         <h3>🎟️ ONE FREE HUG 🫂</h3>
@@ -844,8 +1110,6 @@
       </div>
 
 
-      <!-- COUPON 2 -->
-
       <div class="coupon">
 
         <h3>🎟️ YOU PICK THE MOVIE 🎬</h3>
@@ -869,8 +1133,6 @@
 
       </div>
 
-
-      <!-- COUPON 3 -->
 
       <div class="coupon">
 
@@ -896,8 +1158,6 @@
       </div>
 
 
-      <!-- COUPON 4 -->
-
       <div class="coupon">
 
         <h3>🎟️ ONE DAY OF PEACE 😌</h3>
@@ -922,8 +1182,6 @@
 
       </div>
 
-
-      <!-- COUPON 5 -->
 
       <div class="coupon">
 
@@ -954,8 +1212,203 @@
         Done ❤️
       </button>
 
+
       <div id="couponClosing" class="closing-text">
         Coupon book officially activated. 😭❤️
+      </div>
+
+    </div>
+
+
+    <button class="back-button" onclick="goHome()">
+      ← Back
+    </button>
+
+  </div>
+
+
+  <!-- =====================================================
+       OUR LITTLE MEMORIES
+  ===================================================== -->
+
+  <div id="memories" class="content-box">
+
+    <h2 class="section-title">
+      📸 Our Little Memories
+    </h2>
+
+
+    <button class="music-button" onclick="startMemories()">
+      🎵 Tap to play
+    </button>
+
+
+    <div id="memoriesContent" class="hidden-content">
+
+      <div class="youtube-box">
+
+        <iframe
+          id="memoriesPlayer"
+          width="1"
+          height="1"
+          src="https://www.youtube.com/embed/Mo5tQDcs__g?enablejsapi=1"
+          allow="autoplay">
+        </iframe>
+
+      </div>
+
+
+      <!-- MEMORY ALBUM -->
+
+      <div class="memory-album" id="memoryAlbum">
+
+        <!-- floating hearts will be generated here -->
+
+
+        <div class="album-intro">
+
+          <h3>
+            📖 Our Little Memories
+          </h3>
+
+          <p>
+            Just a few little moments... ❤️
+          </p>
+
+        </div>
+
+
+        <div class="memory-grid">
+
+
+          <div class="memory-card">
+
+            <img
+              src="images/m1.jpg"
+              alt="Memory 1">
+
+            <div class="memory-caption">
+              🫶🏻 little moment
+            </div>
+
+          </div>
+
+
+          <div class="memory-card">
+
+            <img
+              src="images/m2.jpg"
+              alt="Memory 2">
+
+            <div class="memory-caption">
+              😂 one of those moments
+            </div>
+
+          </div>
+
+
+          <div class="memory-card">
+
+            <img
+              src="images/m3.jpg"
+              alt="Memory 3">
+
+            <div class="memory-caption">
+              ❤️ kept this one
+            </div>
+
+          </div>
+
+
+          <div class="memory-card">
+
+            <img
+              src="images/m4.jpg"
+              alt="Memory 4">
+
+            <div class="memory-caption">
+              👀 remember this?
+            </div>
+
+          </div>
+
+
+          <div class="memory-card">
+
+            <img
+              src="images/m5.jpg"
+              alt="Memory 5">
+
+            <div class="memory-caption">
+              🌸 another little memory
+            </div>
+
+          </div>
+
+
+          <div class="memory-card">
+
+            <img
+              src="images/m6.jpg"
+              alt="Memory 6">
+
+            <div class="memory-caption">
+              🥹 this one too
+            </div>
+
+          </div>
+
+
+          <div class="memory-card">
+
+            <img
+              src="images/m7.jpg"
+              alt="Memory 7">
+
+            <div class="memory-caption">
+              🫂 one more
+            </div>
+
+          </div>
+
+
+          <div class="memory-card">
+
+            <img
+              src="images/m8.jpg"
+              alt="Memory 8">
+
+            <div class="memory-caption">
+              ❤️ and another one
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+        <div class="album-bottom">
+
+          Andddd that's our little collection so farrr. 🥹❤️<br><br>
+
+          8 photos may not look like much...
+          but every little moment behind them means something. 🫶🏻<br><br>
+
+          Aur haan, collection abhi khatam nahi hua haiii. 👀😂
+
+        </div>
+
+      </div>
+
+
+      <button class="read-button" onclick="closeMemories()">
+        Done ❤️
+      </button>
+
+
+      <div id="memoriesClosing" class="closing-text">
+        More memories loading... 👀❤️
       </div>
 
     </div>
@@ -972,17 +1425,10 @@
 
 <script>
 
-  /* ================= GENERAL ================= */
 
-  function hideAllSections() {
-
-    document.querySelectorAll(".content-box").forEach(section => {
-      section.classList.remove("active");
-    });
-
-    document.getElementById("home").style.display = "block";
-  }
-
+  /* =====================================================
+     GENERAL
+  ===================================================== */
 
   function openSection(id) {
 
@@ -998,6 +1444,7 @@
       top: 0,
       behavior: "smooth"
     });
+
   }
 
 
@@ -1015,10 +1462,13 @@
       top: 0,
       behavior: "smooth"
     });
+
   }
 
 
-  /* ================= YOUTUBE CONTROL ================= */
+  /* =====================================================
+     YOUTUBE
+  ===================================================== */
 
   function playYouTube(id) {
 
@@ -1032,6 +1482,7 @@
       );
 
     }
+
   }
 
 
@@ -1047,6 +1498,7 @@
       );
 
     }
+
   }
 
 
@@ -1058,11 +1510,16 @@
     stopYouTube("missYouPlayer");
     stopYouTube("sleepyPlayer");
     stopYouTube("uskaHiBananaPlayer");
+    stopYouTube("memoriesPlayer");
+
+    clearInterval(heartInterval);
 
   }
 
 
-  /* ================= NOT GOOD ================= */
+  /* =====================================================
+     NOT GOOD
+  ===================================================== */
 
   function startNotGood() {
 
@@ -1105,7 +1562,9 @@
   }
 
 
-  /* ================= SMILE ================= */
+  /* =====================================================
+     SMILE
+  ===================================================== */
 
   function startSmile() {
 
@@ -1148,7 +1607,9 @@
   }
 
 
-  /* ================= BORED ================= */
+  /* =====================================================
+     BORED
+  ===================================================== */
 
   const laughMessages = [
 
@@ -1222,7 +1683,9 @@
   }
 
 
-  /* ================= QUIZ ================= */
+  /* =====================================================
+     QUIZ
+  ===================================================== */
 
   const quizQuestions = [
 
@@ -1358,9 +1821,7 @@
     const q = quizQuestions[currentQuestion];
 
     if (index === q.answer) {
-
       quizScore++;
-
     }
 
     currentQuestion++;
@@ -1370,7 +1831,9 @@
   }
 
 
-  /* ================= PICK ONE ================= */
+  /* =====================================================
+     PICK ONE
+  ===================================================== */
 
   function pickChoice(choice) {
 
@@ -1380,7 +1843,9 @@
   }
 
 
-  /* ================= HEART GAME ================= */
+  /* =====================================================
+     HEART GAME
+  ===================================================== */
 
   let heartScore = 0;
   let heartInterval;
@@ -1438,7 +1903,9 @@
   }
 
 
-  /* ================= MISS YOU ================= */
+  /* =====================================================
+     MISS YOU
+  ===================================================== */
 
   function startMissYou() {
 
@@ -1481,7 +1948,9 @@
   }
 
 
-  /* ================= SLEEPY ================= */
+  /* =====================================================
+     SLEEPY
+  ===================================================== */
 
   function startSleepy() {
 
@@ -1524,17 +1993,13 @@
   }
 
 
-  /* ================= COUPON BOOK ================= */
+  /* =====================================================
+     COUPON BOOK
+  ===================================================== */
 
   function startCouponBook() {
 
     stopAllMusic();
-
-    /*
-      IMPORTANT:
-      The coupons are still hidden here.
-      They appear only after this button is tapped.
-    */
 
     document.querySelector("#couponBook .music-button").style.display = "none";
 
@@ -1572,6 +2037,111 @@
 
   }
 
+
+  /* =====================================================
+     MEMORIES
+  ===================================================== */
+
+  function startMemories() {
+
+    stopAllMusic();
+
+    document.querySelector("#memories .music-button").style.display = "none";
+
+    document.getElementById("memoriesContent").style.display = "block";
+
+    createFloatingHearts();
+
+    playYouTube("memoriesPlayer");
+
+  }
+
+
+  function createFloatingHearts() {
+
+    const album = document.getElementById("memoryAlbum");
+
+    document
+      .querySelectorAll(".floating-heart")
+      .forEach(heart => heart.remove());
+
+
+    const hearts = [
+      "❤️",
+      "💕",
+      "💗",
+      "💖",
+      "💞",
+      "❤️",
+      "💗",
+      "💕",
+      "❤️",
+      "💖",
+      "💕",
+      "💗"
+    ];
+
+
+    hearts.forEach((symbol, index) => {
+
+      const heart = document.createElement("div");
+
+      heart.className = "floating-heart";
+
+      heart.innerText = symbol;
+
+      heart.style.left =
+        (Math.random() * 90 + 5) + "%";
+
+      heart.style.top =
+        (Math.random() * 80 + 10) + "%";
+
+      heart.style.animationDuration =
+        (4 + Math.random() * 5) + "s";
+
+      heart.style.animationDelay =
+        (Math.random() * 3) + "s";
+
+      heart.style.fontSize =
+        (14 + Math.random() * 12) + "px";
+
+      album.appendChild(heart);
+
+    });
+
+  }
+
+
+  function closeMemories() {
+
+    document.getElementById("memoriesClosing").style.display = "block";
+
+    setTimeout(() => {
+
+      stopYouTube("memoriesPlayer");
+
+      document
+        .querySelectorAll(".floating-heart")
+        .forEach(heart => heart.remove());
+
+      document.getElementById("memories").classList.remove("active");
+
+      document.getElementById("memoriesContent").style.display = "none";
+
+      document.querySelector("#memories .music-button").style.display = "block";
+
+      document.getElementById("memoriesClosing").style.display = "none";
+
+      document.getElementById("home").style.display = "block";
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    }, 3000);
+
+  }
 
 </script>
 
