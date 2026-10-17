@@ -306,10 +306,6 @@
       z-index: 3;
     }
 
-    /*
-      Floating hearts
-    */
-
     .floating-heart {
       position: absolute;
       font-size: 18px;
@@ -441,6 +437,77 @@
 
 
     /* =====================================================
+       SOMETHING RANDOM
+    ===================================================== */
+
+    .random-zone {
+      background: rgba(255,255,255,0.88);
+      padding: 20px;
+      border-radius: 20px;
+      margin-top: 18px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    }
+
+    .random-zone h3 {
+      color: #ff5c8a;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .random-display {
+      background: #fff3f7;
+      border-radius: 18px;
+      padding: 22px 16px;
+      min-height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      line-height: 1.6;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+
+    .random-choice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .random-choice {
+      border: none;
+      padding: 14px 10px;
+      border-radius: 14px;
+      background: #f9dce6;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+      transition: transform 0.2s;
+    }
+
+    .random-choice:hover {
+      transform: translateY(-2px);
+    }
+
+    .chaos-result {
+      text-align: center;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #ff5c8a;
+      line-height: 1.6;
+    }
+
+    .heart-burst {
+      text-align: center;
+      font-size: 28px;
+      margin-top: 18px;
+      min-height: 40px;
+      letter-spacing: 5px;
+    }
+
+
+    /* =====================================================
        MOBILE
     ===================================================== */
 
@@ -567,7 +634,7 @@
         Our Little Memories
       </div>
 
-      <div class="mood-card">
+      <div class="mood-card" onclick="openSection('random')">
         🎲<br>
         Something Random
       </div>
@@ -1258,12 +1325,7 @@
       </div>
 
 
-      <!-- MEMORY ALBUM -->
-
       <div class="memory-album" id="memoryAlbum">
-
-        <!-- floating hearts will be generated here -->
-
 
         <div class="album-intro">
 
@@ -1420,6 +1482,185 @@
 
   </div>
 
+
+  <!-- =====================================================
+       SOMETHING RANDOM
+       NO PHOTO
+  ===================================================== -->
+
+  <div id="random" class="content-box">
+
+    <h2 class="section-title">
+      🎲 Something Random
+    </h2>
+
+    <button class="music-button" onclick="startRandom()">
+      🎵 Tap to play
+    </button>
+
+
+    <div id="randomContent" class="hidden-content">
+
+      <div class="youtube-box">
+
+        <iframe
+          id="randomPlayer"
+          width="1"
+          height="1"
+          src="https://www.youtube.com/embed/Mo5tQDcs__g?enablejsapi=1"
+          allow="autoplay">
+        </iframe>
+
+      </div>
+
+
+      <div class="message">
+
+        Okayyy... you clicked the most unnecessary button
+        on this entire website. 😭😂<br><br>
+
+        So obviouslyyy, now you have to deal with whatever
+        random nonsense I put here. 👀✋<br><br>
+
+        No photos. No serious stuff. Just pure randomnn energy. 😂❤️
+
+      </div>
+
+
+      <div class="random-zone">
+
+        <h3>🎲 Random Little Thing</h3>
+
+        <div id="randomMessage" class="random-display">
+          Press the button and let's see what happens... 👀
+        </div>
+
+        <button
+          class="game-button"
+          onclick="generateRandomMessage()">
+          🎲 Give Me Something Random
+        </button>
+
+      </div>
+
+
+      <div class="random-zone">
+
+        <h3>💌 Totally Random Compliment</h3>
+
+        <div id="randomCompliment" class="random-display">
+          You have to press it. Rules are rules. 😭✋
+        </div>
+
+        <button
+          class="game-button"
+          onclick="generateCompliment()">
+          💗 Compliment Me
+        </button>
+
+      </div>
+
+
+      <div class="random-zone">
+
+        <h3>🤪 Mini Chaos</h3>
+
+        <p style="text-align:center; line-height:1.6;">
+          Choose one. Don't think too much. 👀
+        </p>
+
+        <div class="random-choice-grid">
+
+          <button
+            class="random-choice"
+            onclick="randomChoice('dance')">
+            💃 Dance
+          </button>
+
+          <button
+            class="random-choice"
+            onclick="randomChoice('sleep')">
+            😴 Sleep
+          </button>
+
+          <button
+            class="random-choice"
+            onclick="randomChoice('food')">
+            🍽️ Food
+          </button>
+
+          <button
+            class="random-choice"
+            onclick="randomChoice('chaos')">
+            🤡 Chaos
+          </button>
+
+        </div>
+
+        <div
+          id="chaosResult"
+          class="chaos-result">
+        </div>
+
+      </div>
+
+
+      <div class="random-zone">
+
+        <h3>🎯 Your Completely Random Challenge</h3>
+
+        <div
+          id="randomChallenge"
+          class="random-display">
+          Hmm... should I give you one? 👀
+        </div>
+
+        <button
+          class="game-button"
+          onclick="generateChallenge()">
+          🎯 Give Me A Challenge
+        </button>
+
+      </div>
+
+
+      <div class="random-zone">
+
+        <h3>❤️ Because Why Not</h3>
+
+        <div
+          id="heartBurst"
+          class="heart-burst">
+          👀
+        </div>
+
+        <button
+          class="game-button"
+          onclick="heartBurst()">
+          ❤️ Press This For No Reason
+        </button>
+
+      </div>
+
+
+      <button class="read-button" onclick="closeRandom()">
+        Done ❤️
+      </button>
+
+
+      <div id="randomClosing" class="closing-text">
+        Okayyy random section successfully completed. 😂❤️
+      </div>
+
+    </div>
+
+
+    <button class="back-button" onclick="goHome()">
+      ← Back
+    </button>
+
+  </div>
+
 </div>
 
 
@@ -1511,6 +1752,7 @@
     stopYouTube("sleepyPlayer");
     stopYouTube("uskaHiBananaPlayer");
     stopYouTube("memoriesPlayer");
+    stopYouTube("randomPlayer");
 
     clearInterval(heartInterval);
 
@@ -2082,7 +2324,7 @@
     ];
 
 
-    hearts.forEach((symbol, index) => {
+    hearts.forEach((symbol) => {
 
       const heart = document.createElement("div");
 
@@ -2131,6 +2373,224 @@
       document.querySelector("#memories .music-button").style.display = "block";
 
       document.getElementById("memoriesClosing").style.display = "none";
+
+      document.getElementById("home").style.display = "block";
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    }, 3000);
+
+  }
+
+
+  /* =====================================================
+     SOMETHING RANDOM
+  ===================================================== */
+
+  const randomMessages = [
+
+    "Aap officially is website ki sabse random visitor ho. Congratulations. 🏆😂",
+
+    "Breaking news: Antraa ne bina kisi reason ke Something Random open kar diya. 😭✋",
+
+    "Aapko pata hai? Aap abhi literally ek website ke random section mein ho. 😂",
+
+    "Bas aise hi... because normal rehna boring hota hai. 👀❤️",
+
+    "Reminder: thoda paani pee lo. Haan, ye bhi random advice hai. 😂",
+
+    "Aaj ka random thought: Shinchan probably approves this section. 😭😂",
+
+    "Congratulations! Aapne successfully website ka unnecessary corner discover kar liya. 🎲❤️",
+
+    "Kuch nahi hai yahan... bas main tumhe randomly pareshan kar raha hoon. 😭✋😂",
+
+    "Aapko kuch samajh nahi aa raha? Perfect. Exactly according to plan. 😂",
+
+    "Random fact: mujhe khud nahi pata tha ye button kya karega. 👀😂"
+
+  ];
+
+
+  const randomCompliments = [
+
+    "Waise aapki smile kaafi dangerous hai... baar baar dekhne ka mann karta hai. 👀😂❤️",
+
+    "Aap genuinely kaafi cute ho jab bina reason hasne lagti ho. 😭❤️",
+
+    "Your dancing is still one of my favourite things to watch. 💃❤️",
+
+    "Aap jab excited hoti ho naaa, woh energy alag hi level ki hoti hai. 😂❤️",
+
+    "Aapka random sa pagalpan bhi somehow entertaining hai. 😭✋",
+
+    "Honestlyyy, aap boring bilkul nahi ho... even when you're doing absolutely nothing. 😂❤️",
+
+    "Aapke saath normal conversations bhi somehow memories ban jaati hain. 🫶🏻",
+
+    "Bas ek compliment: you're pretty awesome. That's it. No drama. 😂❤️"
+
+  ];
+
+
+  const randomChallenges = [
+
+    "Next time you see me, don't get scared immediately. 😂✋",
+
+    "Go drink some water right now. Yes, I'm serious. 😭",
+
+    "Put your phone down for 30 seconds. Impossible challenge. 👀😂",
+
+    "Smile for absolutely no reason. Mission complete. ❤️",
+
+    "Think of your favourite food and don't tell me. 🤫😂",
+
+    "Do one tiny dance move wherever you are. Nobody needs to know. 😭💃",
+
+    "Open Shinchan later. This is now officially your assignment. 😂",
+
+    "Send someone a random nice message today. 🫶🏻"
+
+  ];
+
+
+  function startRandom() {
+
+    stopAllMusic();
+
+    document.querySelector("#random .music-button").style.display = "none";
+
+    document.getElementById("randomContent").style.display = "block";
+
+    document.getElementById("randomMessage").innerText =
+      "Press the button and let's see what happens... 👀";
+
+    document.getElementById("randomCompliment").innerText =
+      "You have to press it. Rules are rules. 😭✋";
+
+    document.getElementById("randomChallenge").innerText =
+      "Hmm... should I give you one? 👀";
+
+    document.getElementById("chaosResult").innerText = "";
+
+    document.getElementById("heartBurst").innerText = "👀";
+
+    playYouTube("randomPlayer");
+
+  }
+
+
+  function generateRandomMessage() {
+
+    const message =
+      randomMessages[
+        Math.floor(Math.random() * randomMessages.length)
+      ];
+
+    document.getElementById("randomMessage").innerText =
+      message;
+
+  }
+
+
+  function generateCompliment() {
+
+    const compliment =
+      randomCompliments[
+        Math.floor(Math.random() * randomCompliments.length)
+      ];
+
+    document.getElementById("randomCompliment").innerText =
+      compliment;
+
+  }
+
+
+  function randomChoice(choice) {
+
+    const results = {
+
+      dance:
+        "Obviouslyyy dance 😂💃 Favorite dancer mode activated.",
+
+      sleep:
+        "Of course sleep 😭✋ I knew this was coming.",
+
+      food:
+        "FOODDDD. Especially dosa. 👀🍽️ No surprise there.",
+
+      chaos:
+        "Yep. Definitely chaos. I should've expected this from you. 🤡😂"
+
+    };
+
+
+    document.getElementById("chaosResult").innerText =
+      results[choice];
+
+  }
+
+
+  function generateChallenge() {
+
+    const challenge =
+      randomChallenges[
+        Math.floor(Math.random() * randomChallenges.length)
+      ];
+
+    document.getElementById("randomChallenge").innerText =
+      challenge;
+
+  }
+
+
+  function heartBurst() {
+
+    const bursts = [
+
+      "❤️ 💕 💗 💖 💞 ❤️",
+
+      "💗 ❤️ 💕 🫶🏻 💖 ❤️",
+
+      "💕 💕 ❤️ 💗 ❤️ 💕",
+
+      "❤️ 🫶🏻 ❤️ 🫶🏻 ❤️",
+
+      "💖 💗 💕 ❤️ 💞 💖"
+
+    ];
+
+
+    const burst =
+      bursts[
+        Math.floor(Math.random() * bursts.length)
+      ];
+
+
+    document.getElementById("heartBurst").innerText =
+      burst;
+
+  }
+
+
+  function closeRandom() {
+
+    document.getElementById("randomClosing").style.display = "block";
+
+    setTimeout(() => {
+
+      stopYouTube("randomPlayer");
+
+      document.getElementById("random").classList.remove("active");
+
+      document.getElementById("randomContent").style.display = "none";
+
+      document.querySelector("#random .music-button").style.display = "block";
+
+      document.getElementById("randomClosing").style.display = "none";
 
       document.getElementById("home").style.display = "block";
 
