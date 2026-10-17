@@ -322,7 +322,7 @@
         I miss you
       </div>
 
-      <div class="mood-card">
+      <div class="mood-card" onclick="openSection('sleepy')">
         😴<br>
         I'm sleepy
       </div>
@@ -708,6 +708,58 @@
   </div>
 
 
+  <!-- 😴 I AM SLEEPY -->
+
+  <div id="sleepy" class="content-box">
+
+    <h2 class="section-title">😴 For when you're sleepy</h2>
+
+    <button
+      id="sleepyMusicStart"
+      class="music-button"
+      onclick="startSleepy()">
+      🎵 Tap to play
+    </button>
+
+    <div id="sleepyContent" class="hidden-content">
+
+      <img
+        src="images/p7.jpg"
+        class="section-photo"
+        alt="Antraa">
+
+      <div class="message">
+
+        Heyyy bbyy 😴❤️<br><br>
+
+        Agar ye wala open kiya hai toh matlab neend aa rahi haiii 👀😂<br><br>
+
+        Toh bas phone side mein rakh do thodaaa, zyada scrolling mat karo. 😭✋<br><br>
+
+        Aaj jo bhi hua, jo bhi tension hai, jo bhi baaki hai... sab kal dekh lenge.<br><br>
+
+        Abhi bas araam se let jaooo, comfy ho jaooo and sleep peacfull<strong>”</strong> 😭😂<br><br>
+
+        Goodniniiiiiii!!!! bbygurrlllii ❤️<br>
+        Sweet dreamsss... and haan, zyada sapne mein bhi mujhe pareshan mat karna. 😭✋😂
+
+      </div>
+
+      <button
+        class="read-button"
+        onclick="closeSleepy()">
+        Read ❤️
+      </button>
+
+    </div>
+
+    <div id="sleepyClosing" class="closing-text">
+      Goodniniiiiiii bbyy 😴❤️
+    </div>
+
+  </div>
+
+
   <!-- YOUTUBE PLAYERS -->
 
   <div class="youtube-box">
@@ -748,6 +800,16 @@
       height="1"
       src="https://www.youtube.com/embed/zuvla6ABKbs?enablejsapi=1"
       title="Tu Chahiye"
+      frameborder="0"
+      allow="autoplay">
+    </iframe>
+
+    <iframe
+      id="nadaaniyanPlayer"
+      width="1"
+      height="1"
+      src="https://www.youtube.com/embed/gPpQNzQP6gE?enablejsapi=1"
+      title="Nadaaniyan"
       frameborder="0"
       allow="autoplay">
     </iframe>
@@ -964,6 +1026,55 @@
       document.getElementById("missYouClosing").style.display = "none";
 
       document.getElementById("missYouMusicStart").style.display = "block";
+
+      document.getElementById("home").style.display = "block";
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    }, 3000);
+  }
+
+
+  /* 😴 NADAANIYAN */
+
+  function startSleepy() {
+
+    document.getElementById("sleepyMusicStart").style.display = "none";
+
+    document.getElementById("sleepyContent").style.display = "block";
+
+    const player = document.getElementById("nadaaniyanPlayer");
+
+    player.contentWindow.postMessage(
+      '{"event":"command","func":"playVideo","args":""}',
+      "*"
+    );
+  }
+
+
+  function closeSleepy() {
+
+    document.getElementById("sleepyClosing").style.display = "block";
+
+    setTimeout(function() {
+
+      const player = document.getElementById("nadaaniyanPlayer");
+
+      player.contentWindow.postMessage(
+        '{"event":"command","func":"stopVideo","args":""}',
+        "*"
+      );
+
+      document.getElementById("sleepy").classList.remove("active");
+
+      document.getElementById("sleepyContent").style.display = "none";
+
+      document.getElementById("sleepyClosing").style.display = "none";
+
+      document.getElementById("sleepyMusicStart").style.display = "block";
 
       document.getElementById("home").style.display = "block";
 
