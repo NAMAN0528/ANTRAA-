@@ -1,1270 +1,1259 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Antraa ❤️</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-* {
-  box-sizing: border-box;
-}
+  <title>For Antraa ❤️</title>
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #ffe4ec, #fff6f8);
-  color: #333;
-  text-align: center;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 25px 18px 50px;
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #fff5f8, #fdf1ff);
+      color: #333;
+    }
 
-h1 {
-  color: #e75480;
-  font-size: 42px;
-  margin-bottom: 5px;
-}
+    .container {
+      max-width: 700px;
+      margin: auto;
+      padding: 25px 18px 50px;
+    }
 
-.subtitle {
-  color: #777;
-  margin-bottom: 30px;
-}
+    h1 {
+      text-align: center;
+      color: #ff5c8a;
+      margin-bottom: 8px;
+    }
 
-.card {
-  background: rgba(255,255,255,0.9);
-  border-radius: 25px;
-  padding: 25px;
-  margin: 20px 0;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-}
+    .subtitle {
+      text-align: center;
+      color: #777;
+      margin-bottom: 25px;
+    }
 
-.card h2 {
-  color: #e75480;
-}
+    .hero-photo {
+      width: 100%;
+      height: auto;
+      max-height: none;
+      object-fit: contain;
+      border-radius: 22px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+      display: block;
+    }
 
-.message {
-  text-align: left;
-  line-height: 1.7;
-  font-size: 17px;
-}
+    .message {
+      background: rgba(255,255,255,0.88);
+      padding: 22px;
+      border-radius: 20px;
+      line-height: 1.7;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+      margin-bottom: 25px;
+    }
 
-.mood-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 15px;
-  margin-top: 20px;
-}
+    .section-title {
+      text-align: center;
+      margin: 30px 0 18px;
+      color: #ff5c8a;
+    }
 
-.mood {
-  border: none;
-  padding: 22px;
-  border-radius: 20px;
-  background: white;
-  box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-  cursor: pointer;
-  font-size: 17px;
-  transition: 0.2s;
-}
+    .mood-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
 
-.mood:hover {
-  transform: translateY(-4px);
-}
+    .mood-card {
+      background: white;
+      padding: 20px 12px;
+      border-radius: 18px;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+      font-size: 15px;
+    }
 
-button {
-  border: none;
-  padding: 13px 22px;
-  border-radius: 30px;
-  background: #e75480;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  margin: 8px;
-}
+    .mood-card:hover {
+      transform: translateY(-3px);
+    }
 
-button:hover {
-  opacity: 0.9;
-}
+    .content-box {
+      display: none;
+      margin-top: 20px;
+    }
 
-.content-box {
-  display: none;
-}
+    .content-box.active {
+      display: block;
+    }
 
-.content-box.active {
-  display: block;
-}
+    .music-button,
+    .read-button,
+    .game-button,
+    .back-button {
+      display: block;
+      width: 100%;
+      border: none;
+      padding: 15px;
+      border-radius: 15px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+      font-weight: bold;
+    }
 
-.photo {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 20px;
-  margin: 20px auto;
-  display: block;
-}
+    .music-button {
+      background: #ff7da5;
+      color: white;
+    }
 
-.youtube-box {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  opacity: 0;
-}
+    .read-button {
+      background: #ff5c8a;
+      color: white;
+    }
 
-.hidden-content {
-  display: none;
-}
+    .game-button {
+      background: #f4a261;
+      color: white;
+    }
 
-.closing {
-  display: none;
-  margin-top: 20px;
-  color: #e75480;
-  font-size: 18px;
-  font-weight: bold;
-}
+    .back-button {
+      background: #eee;
+      color: #444;
+    }
 
-.activity {
-  background: #fff7fa;
-  border-radius: 20px;
-  padding: 20px;
-  margin: 18px 0;
-}
+    .hidden-content {
+      display: none;
+    }
 
-.quiz-question {
-  margin: 18px 0;
-}
+    .section-photo {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 20px;
+      margin-top: 20px;
+      box-shadow: 0 7px 22px rgba(0,0,0,0.12);
+      display: block;
+    }
 
-.quiz-option {
-  background: #fce3eb;
-  color: #333;
-}
+    .funny-photo {
+      margin-bottom: 15px;
+    }
 
-.quiz-option:hover {
-  background: #f7cbd9;
-}
+    .youtube-box {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      opacity: 0;
+      pointer-events: none;
+    }
 
-.quiz-result {
-  font-size: 20px;
-  font-weight: bold;
-  color: #e75480;
-}
+    .closing-text {
+      display: none;
+      text-align: center;
+      margin-top: 18px;
+      color: #ff5c8a;
+      font-weight: bold;
+    }
 
-.pick-result {
-  font-size: 20px;
-  margin-top: 15px;
-  font-weight: bold;
-}
+    /* BORED ZONE */
 
-#heartGame {
-  position: relative;
-  height: 250px;
-  background: #fff0f5;
-  border-radius: 20px;
-  overflow: hidden;
-  margin-top: 15px;
-}
+    .activity-card {
+      background: white;
+      padding: 18px;
+      border-radius: 18px;
+      margin-top: 15px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+    }
 
-.heart {
-  position: absolute;
-  font-size: 28px;
-  cursor: pointer;
-}
+    .activity-card h3 {
+      margin-top: 0;
+      color: #ff5c8a;
+    }
 
-.score {
-  font-weight: bold;
-  color: #e75480;
-  margin-top: 10px;
-}
+    .random-message {
+      text-align: center;
+      background: #fff3f7;
+      padding: 18px;
+      border-radius: 15px;
+      margin-top: 15px;
+      min-height: 55px;
+      line-height: 1.5;
+    }
 
-@media (max-width: 600px) {
-  h1 {
-    font-size: 32px;
-  }
+    .quiz-question {
+      font-weight: bold;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
 
-  .container {
-    padding: 18px 12px 40px;
-  }
+    .quiz-option {
+      width: 100%;
+      border: none;
+      background: #f7f7f7;
+      padding: 12px;
+      border-radius: 12px;
+      margin: 6px 0;
+      text-align: left;
+      cursor: pointer;
+      font-size: 14px;
+    }
 
-  .card {
-    padding: 20px 15px;
-  }
-}
-</style>
+    .quiz-option:hover {
+      background: #ffe7ef;
+    }
+
+    .quiz-result {
+      text-align: center;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .pick-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .pick-button {
+      border: none;
+      padding: 14px;
+      border-radius: 13px;
+      background: #f7d6e0;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .heart-game {
+      position: relative;
+      height: 230px;
+      background: #fff5f8;
+      border-radius: 18px;
+      overflow: hidden;
+      margin-top: 12px;
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 30px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .heart-score {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 500px) {
+      .mood-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <div class="container">
 
-<!-- ================= HOME ================= -->
+  <!-- HOME -->
 
-<div id="home">
+  <div id="home">
 
-<h1>❤️ FOR ANTRAA</h1>
+    <h1>❤️ FOR ANTRAA</h1>
 
-<div class="card">
+    <div class="subtitle">
+      A little place made specially for youuu 🫶🏻
+    </div>
 
-<div class="message">
+    <img src="images/p1.jpg" class="hero-photo" alt="Antraa">
 
-<p>Heyyy Antraaaa ❤️</p>
+    <div class="message">
 
-<p>
-Soo bbygurrlllii, since I can't be there with you right now, I thought why not make you something of my own insteadtt 😭❤️
-</p>
+      Heyyy Antraaaa ❤️<br><br>
 
-<p>
-It's nothing too biggg kyukii aap too jada bada dekk kee pura alas ho jaoge or avi k time to or ni man krega pdhnee kaa so something simplee being normall not over dramatic and being real , just a small little place made specially for youuu bbyy.
-</p>
+      Soo bbygurrlllii, since I can't be there with you right now,
+      I thought why not make you something of my own insteadtt 😭❤️<br><br>
 
-<p>
-You can come here whenever you're bored, whenever you want a little smile, or whenever you just wanna see what stupid things I've put here for you 😂
-</p>
+      It's nothing too biggg kyukii aap too jada bada dekk kee pura alas ho jaoge
+      or avi k time to or ni man krega pdhnee kaa so something simplee being normall
+      not over dramatic and being real , just a small little place made specially
+      for youuu bbyy.<br><br>
 
-<p>
-So yeahhh bbyy, welcome to your little corner. 🫶🏻
-</p>
+      You can come here whenever you're bored, whenever you want a little smile,
+      or whenever you just wanna see what stupid things I've put here for you 😂<br><br>
 
-<p>
-Now go exploreee everythinggg 👀<br>
-And yes… there <i>might</i> be a few surprises hidden around here hehe. 😭❤️
-</p>
+      So yeahhh bbyy, welcome to your little corner. 🫶🏻<br><br>
 
-</div>
+      Now go exploreee everythinggg 👀<br>
+      And yes… there <i>might</i> be a few surprises hidden around here hehe. 😭❤️
 
-<img src="images/p1.jpg" class="photo">
+    </div>
 
-</div>
+    <h2 class="section-title">WHAT DO YOU NEED RIGHT NOW? 👀</h2>
 
+    <div class="mood-grid">
 
-<h2>WHAT DO YOU NEED RIGHT NOW? 👀</h2>
+      <div class="mood-card" onclick="openSection('notGood')">
+        🌸<br>
+        I'm not feeling good
+      </div>
 
-<div class="mood-grid">
+      <div class="mood-card" onclick="openSection('smile')">
+        😂<br>
+        I need to smile
+      </div>
 
-<button class="mood" onclick="openSection('notGood')">
-🌸<br><br>
-<b>I'm not feeling good</b>
-</button>
+      <div class="mood-card" onclick="openSection('bored')">
+        🥱<br>
+        I'm really bored
+      </div>
 
-<button class="mood" onclick="openSection('smile')">
-😂<br><br>
-<b>I need to smile</b>
-</button>
+      <div class="mood-card" onclick="openSection('missYou')">
+        🫂<br>
+        I miss you
+      </div>
 
-<button class="mood" onclick="openSection('bored')">
-🥱<br><br>
-<b>I'm really bored</b>
-</button>
+      <div class="mood-card">
+        😴<br>
+        I'm sleepy
+      </div>
 
-<button class="mood" onclick="openSection('missYou')">
-🫂<br><br>
-<b>I miss you</b>
-</button>
+      <div class="mood-card">
+        💗<br>
+        I just want something nice
+      </div>
 
-<button class="mood" onclick="openSection('sleepy')">
-😴<br><br>
-<b>I'm sleepy</b>
-</button>
+    </div>
 
-<button class="mood" onclick="openSection('nice')">
-💗<br><br>
-<b>I just want something nice</b>
-</button>
+    <h2 class="section-title">Or maybe... 👀</h2>
 
-</div>
+    <div class="mood-grid">
 
+      <div class="mood-card">
+        🎟️<br>
+        Your Coupon Book
+      </div>
 
-<h2 style="margin-top:40px;">Or maybe... 👀</h2>
+      <div class="mood-card">
+        📸<br>
+        Our Little Memories
+      </div>
 
-<div class="mood-grid">
+      <div class="mood-card">
+        🎲<br>
+        Something Random
+      </div>
 
-<button class="mood">
-🎟️<br><br>
-<b>Your Coupon Book</b>
-</button>
+    </div>
 
-<button class="mood">
-📸<br><br>
-<b>Our Little Memories</b>
-</button>
+  </div>
 
-<button class="mood">
-🎲<br><br>
-<b>Something Random</b>
-</button>
 
-</div>
+  <!-- 🌸 NOT FEELING GOOD -->
 
-</div>
+  <div id="notGood" class="content-box">
 
+    <h2 class="section-title">🌸 For when you're not feeling good</h2>
 
-<!-- ================= NOT FEELING GOOD ================= -->
+    <button
+      id="musicStart"
+      class="music-button"
+      onclick="startIktara()">
+      🎵 Tap to play
+    </button>
 
-<div id="notGood" class="content-box">
+    <div id="notGoodContent" class="hidden-content">
 
-<div class="card">
+      <img
+        src="images/p2.jpg"
+        class="section-photo"
+        alt="Antraa">
 
-<div id="musicStart">
+      <div class="message">
 
-<h2>🌸 I'm not feeling good</h2>
+        Heyyy bbyy ❤️<br><br>
 
-<p>
-Maybe you need a little resttt. ❤️
-</p>
+        it's completely okayii . ❤️<br>
+        Periods aur hormonal changes ki wajah se aisa feel hona normal hai,
+        so don't worry too much about ittt.<br><br>
 
-<button onclick="startIktara()">🎵 Tap to play</button>
+        Bas thoda rest kar, comfy ho jaa, heating pad apne paas rkhna
+        and apna dhyaan rakhnaaa. 🌸<br><br>
 
-</div>
+        Aaj zyada strong banne ki zarurat nahi hai 😂<br>
+        Jo mann kare karo, araam karo, kuch achha khao and bas relaxxxx.<br><br>
 
+        Aur haannn, agar kisi bhi cheez ki zarurat ho ya bas baat karne ka
+        mann kareee, <b>I'm hereee.</b> 🫶🏻<br><br>
 
-<div class="youtube-box">
+        I know main abhi tere paas nahi hoon, but at least itna toh kar hi
+        sakta hoon ki jab bhi tu ye padhe, tujhe lage ki koi hai jo tere saath hai. ❤️<br><br>
 
-<iframe
-id="iktaraPlayer"
-width="1"
-height="1"
-src="https://www.youtube.com/embed/ZlOZktsODpA?enablejsapi=1"
-title="Iktara"
-frameborder="0"
-allow="autoplay">
-</iframe>
+        Andddd bbyy… thoda sa smile kar denaaa. 😭❤️
 
-</div>
+      </div>
 
+      <button class="read-button" onclick="closeNotGood()">
+        Read ❤️
+      </button>
 
-<div id="notGoodContent" class="hidden-content">
+    </div>
 
-<img src="images/p2.jpg" class="photo">
+    <div id="closingText" class="closing-text">
+      Okayyy bbyy, ab thoda rest karooo ❤️
+    </div>
 
-<div class="message">
+  </div>
 
-<p>Heyyy bbyy ❤️</p>
 
-<p>
-it's completely okayii . ❤️
-Periods aur hormonal changes ki wajah se aisa feel hona normal hai, so don't worry too much about ittt.
-</p>
+  <!-- 😂 I NEED TO SMILE -->
 
-<p>
-Bas thoda rest kar, comfy ho jaa, heating pad apne paas rkhna and apna dhyaan rakhnaaa. 🌸
-</p>
+  <div id="smile" class="content-box">
 
-<p>
-Aaj zyada strong banne ki zarurat nahi hai 😂
-Jo mann kare karo, araam karo, kuch achha khao and bas relaxxxx.
-</p>
+    <h2 class="section-title">😂 For when you need to smile</h2>
 
-<p>
-Aur haannn, agar kisi bhi cheez ki zarurat ho ya bas baat karne ka mann kareee, <b>I'm hereee.</b> 🫶🏻
-</p>
+    <button
+      id="smileMusicStart"
+      class="music-button"
+      onclick="startUllu()">
+      🎵 Tap to play
+    </button>
 
-<p>
-I know main abhi tere paas nahi hoon, but at least itna toh kar hi sakta hoon ki jab bhi tu ye padhe, tujhe lage ki koi hai jo tere saath hai. ❤️
-</p>
+    <div id="smileContent" class="hidden-content">
 
-<p>
-Andddd bbyy… thoda sa smile kar denaaa. 😭❤️
-</p>
+      <img
+        src="images/p3.jpg"
+        class="section-photo funny-photo"
+        alt="Antraa being funny">
 
-</div>
+      <img
+        src="images/p4.jpg"
+        class="section-photo"
+        alt="Naman being funny">
 
-<button onclick="closeNotGood()">Read ❤️</button>
+      <div class="message">
 
-<div id="closingText" class="closing">
-Okayyy bbyy... ab thoda rest karo. ❤️
-</div>
+        Heyyy bbygurrlllii 😂❤️<br><br>
 
-</div>
+        Agar aap ye wala open kar rahi ho toh I think mujhe aapko
+        thoda hasaana padegaaa 😭<br><br>
 
-</div>
+        Toh pehle ek important question...<br><br>
 
-</div>
+        <b>Parathaaa banane ka kya hua tha? 👀</b><br><br>
 
+        Aapne itne pyaar se banaya tha aur end mein woh paratha itna hard ho gaya tha
+        ki usse khaane ke liye shayad hammer chahiye tha... umm yaad h? 😭😂<br><br>
 
-<!-- ================= SMILE ================= -->
+        Aur phir school mein jab main achanak se aapke saamne aa jaata hoon
+        aur aap ekdum se darr ke idhar-udhar hone lagti ho 😂😭<br>
+        I swearrr, aapka woh reaction dekhna is too funnyyy.<br><br>
 
-<div id="smile" class="content-box">
+        Aur haannn, jab main flirt karta hoon aur tumm hasne lagti ho...<br>
+        <b>haan haan, I notice ittt ummm hummmm 🥰😘👀😂 kyy smjuu issee too meeeiii</b><br><br>
 
-<div class="card">
+        Bas itna hi kehna tha...<br><br>
 
-<div id="smileMusicStart">
+        Ab thoda smile karooo. ❤️<br><br>
 
-<h2>😂 I need to smile</h2>
+        Agar nahi kiya toh main aur embarrass karungaaa. 😭😂<br><br>
 
-<p>
-Heyyy bbygurrlllii 😂❤️
-</p>
+        btww absee bathroom kaaa darwazaa lgaa lenaa ni to firr see
+        chilygii ki bhoot bhii dar jaayee😭✌️
 
-<p>
-Agar aap ye wala open kar rahi ho toh I think mujhe aapko thoda hasaana padegaaa 😭
-</p>
+      </div>
 
-<button onclick="startUllu()">🎵 Tap to play</button>
+      <button class="read-button" onclick="closeSmile()">
+        Read 😂
+      </button>
 
-</div>
+    </div>
 
+    <div id="smileClosing" class="closing-text">
+      Okayyy madammm, ab smile aa gayi hogi 😂❤️
+    </div>
 
-<div class="youtube-box">
+  </div>
 
-<iframe
-id="ulluPlayer"
-width="1"
-height="1"
-src="https://www.youtube.com/embed/f_UWq8lXfYo?enablejsapi=1"
-title="Ullu Ka Pattha"
-frameborder="0"
-allow="autoplay">
-</iframe>
 
-</div>
+  <!-- 🥱 BORED -->
 
+  <div id="bored" class="content-box">
 
-<div id="smileContent" class="hidden-content">
+    <h2 class="section-title">🥱 For when you're really bored</h2>
 
-<img src="images/p3.jpg" class="photo">
+    <button
+      id="boredMusicStart"
+      class="music-button"
+      onclick="startGhungroo()">
+      🎵 Tap to play
+    </button>
 
-<img src="images/p4.jpg" class="photo">
+    <div id="boredContent" class="hidden-content">
 
-<div class="message">
+      <div class="message">
 
-<p>
-Heyyy bbygurrlllii 😂❤️
-</p>
+        Heyyy bbyyy 😂❤️<br><br>
 
-<p>
-Agar aap ye wala open kar rahi ho toh I think mujhe aapko thoda hasaana padegaaa 😭
-</p>
+        Bore ho rahi hooo?<br>
+        Phone scroll karke thak gayi? 😭<br><br>
 
-<p>
-Toh pehle ek important question...
-</p>
+        Toh ab meri duty hai aapko thoda entertain karne kii 😂✋<br><br>
 
-<p>
-<b>Parathaaa banane ka kya hua tha? 👀</b>
-</p>
+        Neeche kuch chhoti chhoti cheezein rakhi hain —
+        kuch funny, kuch random, aur kuch aisi hain jinka koi matlab hi nahi hai 😭<br><br>
 
-<p>
-Aapne itne pyaar se banaya tha aur end mein woh paratha itna hard ho gaya tha ki usse khaane ke liye shayad hammer chahiye tha... umm yaad h? 😭😂
-</p>
+        Chalooo ab boredom ko khatam karte hain. 👀👇
 
-<p>
-Aur phir school mein jab main achanak se aapke saamne aa jaata hoon aur aap ekdum se darr ke idhar-udhar hone lagti ho 😂😭
-I swearrr, aapka woh reaction dekhna is too funnyyy.
-</p>
+      </div>
 
-<p>
-Aur haannn, jab main flirt karta hoon aur tumm hasne lagti ho...
-<b>haan haan, I notice ittt ummm hummmm 🥰😘👀😂 kyy smjuu issee too meeeiii</b>
-</p>
 
-<p>
-Bas itna hi kehna tha...
-</p>
+      <!-- MAKE ME LAUGH -->
 
-<p>
-Ab thoda smile karooo. ❤️
-</p>
+      <div class="activity-card">
 
-<p>
-Agar nahi kiya toh main aur embarrass karungaaa. 😭😂
-btww absee bathroom kaaa darwazaa lgaa lenaa ni to firr see chilygii ki bhoot bhii dar jaayee😭✌️
-</p>
+        <h3>😂 Make Me Laugh</h3>
 
-</div>
+        <p>
+          Button dabao aur dekho kya random bakwaas milti hai. 😭
+        </p>
 
-<button onclick="closeSmile()">Read ❤️</button>
+        <button
+          class="game-button"
+          onclick="randomLaugh()">
+          😂 Make Me Laugh
+        </button>
 
-<div id="smileClosing" class="closing">
-Bas bas... ab has liya toh jaaooo 😂❤️
-</div>
+        <div id="laughMessage" class="random-message">
+          👀 Press the button...
+        </div>
 
-</div>
+      </div>
 
-</div>
 
-</div>
+      <!-- QUIZ -->
 
+      <div class="activity-card">
 
-<!-- ================= BORED ================= -->
+        <h3>🧠 How Well Do You Know Antraa?</h3>
 
-<div id="bored" class="content-box">
+        <div id="quizArea"></div>
 
-<div class="card">
+        <div id="quizResult" class="quiz-result"></div>
 
+      </div>
 
-<!-- THIS ENTIRE PART DISAPPEARS AFTER TAP TO PLAY -->
 
-<div id="boredMusicStart">
+      <!-- PICK ONE -->
 
-<h2>🥱 I'm really bored</h2>
+      <div class="activity-card">
 
-<div class="message">
+        <h3>👀 Pick One</h3>
 
-<p>
-Heyyy bbyyy 😂❤️
-</p>
+        <p>Bas jo mann kare choose karo. No thinking. 😂</p>
 
-<p>
-Bore ho rahi hooo?<br>
-Phone scroll karke thak gayi? 😭
-</p>
+        <div class="pick-buttons">
 
-<p>
-Toh ab meri duty hai aapko thoda entertain karne kii 😂✋
-</p>
+          <button
+            class="pick-button"
+            onclick="pickChoice('Dosa wins. Obviously. 😭❤️')">
+            🥞 Dosa
+          </button>
 
-<p>
-Neeche kuch chhoti chhoti cheezein rakhi hain — kuch funny, kuch random, aur kuch aisi hain jinka koi matlab hi nahi hai 😭
-</p>
+          <button
+            class="pick-button"
+            onclick="pickChoice('Movie nighttt 🎬😂')">
+            🎬 Movie
+          </button>
 
-<p>
-Aur haannn, agar sab dekhne ke baad bhi bore ho...
-</p>
+          <button
+            class="pick-button"
+            onclick="pickChoice('Sleeping wins this round. 😴')">
+            😴 Sleep
+          </button>
 
-<p>
-<b>toh problem website mein nahi, aap mein hai. 😭😂</b>
-</p>
+          <button
+            class="pick-button"
+            onclick="pickChoice('Okayyy dancer mode ON 💃😂')">
+            💃 Dance
+          </button>
 
-<p>
-Chalooo ab neeche jaooo 👀👇
-</p>
+        </div>
 
-<p>
-<b>Boredness ko khatam karte hain. 😌❤️</b>
-</p>
+        <div id="pickResult" class="random-message">
+          Choose one 👀
+        </div>
 
-</div>
+      </div>
 
-<button onclick="startGhungroo()">🎵 Tap to play</button>
 
-</div>
+      <!-- CATCH THE HEARTS -->
 
+      <div class="activity-card">
 
-<div class="youtube-box">
+        <h3>❤️ Catch the Hearts</h3>
 
-<iframe
-id="ghungrooPlayer"
-width="1"
-height="1"
-src="https://www.youtube.com/embed/qFkNATtc3mc?enablejsapi=1"
-title="Ghungroo"
-frameborder="0"
-allow="autoplay">
-</iframe>
+        <p>
+          Tap the hearts before they disappearrr 😭
+        </p>
 
-</div>
+        <button
+          class="game-button"
+          onclick="startHeartGame()">
+          ❤️ Start Game
+        </button>
 
+        <div id="heartGame" class="heart-game"></div>
 
-<!-- ACTUAL BORED CONTENT APPEARS ONLY AFTER MUSIC STARTS -->
+        <div id="heartScore" class="heart-score">
+          Score: 0
+        </div>
 
-<div id="boredContent" class="hidden-content">
+      </div>
 
 
-<div class="activity">
+      <button
+        class="read-button"
+        onclick="closeBored()">
+        Done 😂
+      </button>
 
-<h2>😂 Make Me Laugh</h2>
+    </div>
 
-<p>
-Click the button and let's see what nonsense memory appears. 😭
-</p>
+    <div id="boredClosing" class="closing-text">
+      Okayyy, boredom officially cancelled. 😭❤️
+    </div>
 
-<button onclick="makeMeLaugh()">😂 Make Me Laugh</button>
+  </div>
 
-<p id="laughText" style="font-size:18px;line-height:1.6;"></p>
 
-</div>
+  <!-- 🫂 I MISS YOU -->
 
+  <div id="missYou" class="content-box">
 
-<div class="activity">
+    <h2 class="section-title">🫂 For when you miss me</h2>
 
-<h2>🧠 How Well Do You Know Yourself?</h2>
+    <button
+      id="missYouMusicStart"
+      class="music-button"
+      onclick="startTuChahiye()">
+      🎵 Tap to play
+    </button>
 
-<div id="quiz"></div>
+    <div id="missYouContent" class="hidden-content">
 
-</div>
+      <img
+        src="images/p5.jpg"
+        class="section-photo"
+        alt="Antraa">
 
+      <img
+        src="images/p6.jpg"
+        class="section-photo"
+        alt="Antraa">
 
-<div class="activity">
+      <div class="message">
 
-<h2>👀 Pick One</h2>
+        Heyyy Antraaaa ❤️<br><br>
 
-<p>Don't think too much. Just choose. 😂</p>
+        Agar aapne ye wala open kiya hai toh matlabmm...<br>
+        <b>mujhe yaad kar rahi ho kyaaa? 👀😂</b><br><br>
 
-<button onclick="pickOne('🥞 Dosa')">🥞 Dosa</button>
-<button onclick="pickOne('🎬 Movie')">🎬 Movie</button>
-<button onclick="pickOne('😴 Sleep')">😴 Sleep</button>
-<button onclick="pickOne('💃 Dance')">💃 Dance</button>
+        Hmmm suspiciousss...<br><br>
 
-<div id="pickResult" class="pick-result"></div>
+        Waise sach boluu, meko apka yaad nii aati haiii
+        kykuu tu meeeree dill me bstii h biruuu. 🫶🏻<br><br>
 
-</div>
+        Kabhi call pe baat karte hue, kabhi text karte hue,
+        kabhi school mein aapko dekh ke...<br>
+        bas ye sab chhoti chhoti cheezein bhi mere liye memories ban jaati hain. ❤️<br><br>
 
+        Aur haannn, agar school mein main achanak se saamne aa gaya naaa
+        toh darrna mat 😂<br>
+        Pehle se bata raha hoon, main kabhi bhi kahin se bhi tapak sakta hoon. 😭✌️<br><br>
 
-<div class="activity">
+        Bas ek kaam karo...<br><br>
 
-<h2>❤️ Catch the Hearts</h2>
+        <b>
+          Smile karo, han sayd jada boldiye smilee krdeene itna kii ab jb milegi
+          meraa khoon ho jaana h, btwww restt kroo bbyyy.
+        </b> 😂❤️<br><br>
 
-<p>
-You have 10 seconds. Catch as many as you can. 👀
-</p>
+        I'll see you soon, bbyy. 🫶🏻<br><br>
 
-<button onclick="startHeartGame()">❤️ Start</button>
+        aree haawnn nawratrii kaaa 7th day kaa pranam devii jiii,
+        aashirvaad dee🙏🙏
 
-<div id="heartGame"></div>
+      </div>
 
-<div id="heartScore" class="score">
-Score: 0
-</div>
+      <button class="read-button" onclick="closeMissYou()">
+        Read 🫂
+      </button>
 
-</div>
+    </div>
 
+    <div id="missYouClosing" class="closing-text">
+      Okayyy bbyy, ab zyada yaad mat karnaaa 😭❤️
+    </div>
 
-<button onclick="closeBored()">Read ❤️</button>
+  </div>
 
-<div id="boredClosing" class="closing">
-Okayyy enough boredom for today 😭❤️
-</div>
 
-</div>
+  <!-- YOUTUBE PLAYERS -->
 
-</div>
+  <div class="youtube-box">
 
-</div>
+    <iframe
+      id="iktaraPlayer"
+      width="1"
+      height="1"
+      src="https://www.youtube.com/embed/ZlOZktsODpA?enablejsapi=1"
+      title="Iktara"
+      frameborder="0"
+      allow="autoplay">
+    </iframe>
 
+    <iframe
+      id="ulluPlayer"
+      width="1"
+      height="1"
+      src="https://www.youtube.com/embed/f_UWq8lXfYo?enablejsapi=1"
+      title="Ullu Ka Pattha"
+      frameborder="0"
+      allow="autoplay">
+    </iframe>
 
-<!-- ================= MISS YOU ================= -->
+    <iframe
+      id="ghungrooPlayer"
+      width="1"
+      height="1"
+      src="https://www.youtube.com/embed/qFkNATtc3mc?enablejsapi=1"
+      title="Ghungroo"
+      frameborder="0"
+      allow="autoplay">
+    </iframe>
 
-<div id="missYou" class="content-box">
+    <iframe
+      id="tuChahiyePlayer"
+      width="1"
+      height="1"
+      src="https://www.youtube.com/embed/zuvla6ABKbs?enablejsapi=1"
+      title="Tu Chahiye"
+      frameborder="0"
+      allow="autoplay">
+    </iframe>
 
-<div class="card">
-
-<div id="missMusicStart">
-
-<h2>🫂 I miss you</h2>
-
-<p>
-Hmmm... suspiciousss 👀
-</p>
-
-<button onclick="startMissYou()">🎵 Tap to play</button>
-
-</div>
-
-
-<div class="youtube-box">
-
-<iframe
-id="missYouPlayer"
-width="1"
-height="1"
-src="https://www.youtube.com/embed/zuvla6ABKbs?enablejsapi=1"
-title="Tu Chahiye"
-frameborder="0"
-allow="autoplay">
-</iframe>
-
-</div>
-
-
-<div id="missYouContent" class="hidden-content">
-
-<img src="images/p5.jpg" class="photo">
-
-<img src="images/p6.jpg" class="photo">
-
-<div class="message">
-
-<p>
-Heyyy Antraaaa ❤️
-</p>
-
-<p>
-Agar aapne ye wala open kiya hai toh matlabmm...
-<b>mujhe yaad kar rahi ho kyaaa? 👀😂</b>
-</p>
-
-<p>
-Hmmm suspiciousss...
-</p>
-
-<p>
-Waise sach boluu, meko apka yaad nii aati haiii kykuu tu meeeree dill me bstii h biruuu. 🫶🏻
-</p>
-
-<p>
-Kabhi call pe baat karte hue, kabhi text karte hue, kabhi school mein aapko dekh ke...
-bas ye sab chhoti chhoti cheezein bhi mere liye memories ban jaati hain. ❤️
-</p>
-
-<p>
-Aur haannn, agar school mein main achanak se saamne aa gaya naaa toh darrna mat 😂
-Pehle se bata raha hoon, main kabhi bhi kahin se bhi tapak sakta hoon. 😭✌️
-</p>
-
-<p>
-Bas ek kaam karo...
-</p>
-
-<p>
-<b>
-Smile karo, han sayd jada boldiye smilee krdeene itna kii ab jb milegi meraa khoon ho jaana h, btwww restt kroo bbyyy.
-</b> 😂❤️
-</p>
-
-<p>
-I'll see you soon, bbyy. 🫶🏻
-</p>
-
-<p>
-aree haawnn nawratrii kaaa 7th day kaa pranam devii jiii, aashirvaad dee🙏🙏
-</p>
-
-</div>
-
-<button onclick="closeMissYou()">Read ❤️</button>
-
-<div id="missClosing" class="closing">
-Okayyy... ab zyada miss mat karnaaa 😂❤️
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- ================= SLEEPY ================= -->
-
-<div id="sleepy" class="content-box">
-
-<div class="card">
-
-<h2>😴 I'm sleepy</h2>
-
-<p>
-This section is coming nexttt 👀❤️
-</p>
-
-<button onclick="backHome()">Go Back</button>
-
-</div>
-
-</div>
-
-
-<!-- ================= SOMETHING NICE ================= -->
-
-<div id="nice" class="content-box">
-
-<div class="card">
-
-<h2>💗 I just want something nice</h2>
-
-<p>
-This section is coming nexttt 👀❤️
-</p>
-
-<button onclick="backHome()">Go Back</button>
-
-</div>
-
-</div>
+  </div>
 
 </div>
 
 
 <script>
 
-/* ================= GENERAL ================= */
+  /* GENERAL SECTION */
 
-function openSection(id) {
+  function openSection(id) {
 
-document.getElementById("home").style.display = "none";
+    document.getElementById("home").style.display = "none";
 
-document.querySelectorAll(".content-box").forEach(function(box) {
-box.classList.remove("active");
-});
+    document.querySelectorAll(".content-box").forEach(function(box) {
+      box.classList.remove("active");
+    });
 
-document.getElementById(id).classList.add("active");
+    document.getElementById(id).classList.add("active");
 
-window.scrollTo({
-top: 0,
-behavior: "smooth"
-});
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
 
-}
 
-function backHome() {
+  /* 🌸 IKTARA */
 
-document.querySelectorAll(".content-box").forEach(function(box) {
-box.classList.remove("active");
-});
+  function startIktara() {
 
-document.getElementById("home").style.display = "block";
+    document.getElementById("musicStart").style.display = "none";
 
-window.scrollTo({
-top: 0,
-behavior: "smooth"
-});
+    document.getElementById("notGoodContent").style.display = "block";
 
-}
+    const player = document.getElementById("iktaraPlayer");
 
+    player.contentWindow.postMessage(
+      '{"event":"command","func":"playVideo","args":""}',
+      "*"
+    );
+  }
 
-/* ================= IKTARA ================= */
 
-function startIktara() {
+  function closeNotGood() {
 
-document.getElementById("musicStart").style.display = "none";
+    document.getElementById("closingText").style.display = "block";
 
-document.getElementById("notGoodContent").style.display = "block";
+    setTimeout(function() {
 
-const player = document.getElementById("iktaraPlayer");
+      const player = document.getElementById("iktaraPlayer");
 
-player.contentWindow.postMessage(
-'{"event":"command","func":"playVideo","args":""}',
-"*"
-);
+      player.contentWindow.postMessage(
+        '{"event":"command","func":"stopVideo","args":""}',
+        "*"
+      );
 
-}
+      document.getElementById("notGood").classList.remove("active");
 
-function closeNotGood() {
+      document.getElementById("notGoodContent").style.display = "none";
 
-document.getElementById("closingText").style.display = "block";
+      document.getElementById("closingText").style.display = "none";
 
-setTimeout(function() {
+      document.getElementById("musicStart").style.display = "block";
 
-const player = document.getElementById("iktaraPlayer");
+      document.getElementById("home").style.display = "block";
 
-player.contentWindow.postMessage(
-'{"event":"command","func":"stopVideo","args":""}',
-"*"
-);
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
 
-document.getElementById("notGood").classList.remove("active");
+    }, 3000);
+  }
 
-document.getElementById("notGoodContent").style.display = "none";
 
-document.getElementById("closingText").style.display = "none";
+  /* 😂 ULLU KA PATTHA */
 
-document.getElementById("musicStart").style.display = "block";
+  function startUllu() {
 
-document.getElementById("home").style.display = "block";
+    document.getElementById("smileMusicStart").style.display = "none";
 
-window.scrollTo({
-top: 0,
-behavior: "smooth"
-});
+    document.getElementById("smileContent").style.display = "block";
 
-}, 3000);
+    const player = document.getElementById("ulluPlayer");
 
-}
+    player.contentWindow.postMessage(
+      '{"event":"command","func":"playVideo","args":""}',
+      "*"
+    );
+  }
 
 
-/* ================= ULLU ================= */
+  function closeSmile() {
 
-function startUllu() {
+    document.getElementById("smileClosing").style.display = "block";
 
-document.getElementById("smileMusicStart").style.display = "none";
+    setTimeout(function() {
 
-document.getElementById("smileContent").style.display = "block";
+      const player = document.getElementById("ulluPlayer");
 
-const player = document.getElementById("ulluPlayer");
+      player.contentWindow.postMessage(
+        '{"event":"command","func":"stopVideo","args":""}',
+        "*"
+      );
 
-player.contentWindow.postMessage(
-'{"event":"command","func":"playVideo","args":""}',
-"*"
-);
+      document.getElementById("smile").classList.remove("active");
 
-}
+      document.getElementById("smileContent").style.display = "none";
 
-function closeSmile() {
+      document.getElementById("smileClosing").style.display = "none";
 
-document.getElementById("smileClosing").style.display = "block";
+      document.getElementById("smileMusicStart").style.display = "block";
 
-setTimeout(function() {
+      document.getElementById("home").style.display = "block";
 
-const player = document.getElementById("ulluPlayer");
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
 
-player.contentWindow.postMessage(
-'{"event":"command","func":"stopVideo","args":""}',
-"*"
-);
+    }, 3000);
+  }
 
-document.getElementById("smile").classList.remove("active");
 
-document.getElementById("smileContent").style.display = "none";
+  /* 🥱 GHUNGROO */
 
-document.getElementById("smileClosing").style.display = "none";
+  function startGhungroo() {
 
-document.getElementById("smileMusicStart").style.display = "block";
+    document.getElementById("boredMusicStart").style.display = "none";
 
-document.getElementById("home").style.display = "block";
+    document.getElementById("boredContent").style.display = "block";
 
-window.scrollTo({
-top: 0,
-behavior: "smooth"
-});
+    const player = document.getElementById("ghungrooPlayer");
 
-}, 3000);
+    player.contentWindow.postMessage(
+      '{"event":"command","func":"playVideo","args":""}',
+      "*"
+    );
 
-}
+    setupQuiz();
+  }
 
 
-/* ================= GHUNGROO / BORED ================= */
+  function closeBored() {
 
-function startGhungroo() {
+    document.getElementById("boredClosing").style.display = "block";
 
-document.getElementById("boredMusicStart").style.display = "none";
+    setTimeout(function() {
 
-document.getElementById("boredContent").style.display = "block";
+      const player = document.getElementById("ghungrooPlayer");
 
-const player = document.getElementById("ghungrooPlayer");
+      player.contentWindow.postMessage(
+        '{"event":"command","func":"stopVideo","args":""}',
+        "*"
+      );
 
-player.contentWindow.postMessage(
-'{"event":"command","func":"playVideo","args":""}',
-"*"
-);
+      document.getElementById("bored").classList.remove("active");
 
-setupQuiz();
+      document.getElementById("boredContent").style.display = "none";
 
-}
+      document.getElementById("boredClosing").style.display = "none";
 
-function closeBored() {
+      document.getElementById("boredMusicStart").style.display = "block";
 
-document.getElementById("boredClosing").style.display = "block";
+      document.getElementById("home").style.display = "block";
 
-setTimeout(function() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
 
-const player = document.getElementById("ghungrooPlayer");
+    }, 3000);
+  }
 
-player.contentWindow.postMessage(
-'{"event":"command","func":"stopVideo","args":""}',
-"*"
-);
 
-document.getElementById("bored").classList.remove("active");
+  /* 🫂 TU CHAHIYE */
 
-document.getElementById("boredContent").style.display = "none";
+  function startTuChahiye() {
 
-document.getElementById("boredClosing").style.display = "none";
+    document.getElementById("missYouMusicStart").style.display = "none";
 
-document.getElementById("boredMusicStart").style.display = "block";
+    document.getElementById("missYouContent").style.display = "block";
 
-document.getElementById("home").style.display = "block";
+    const player = document.getElementById("tuChahiyePlayer");
 
-window.scrollTo({
-top: 0,
-behavior: "smooth"
-});
+    player.contentWindow.postMessage(
+      '{"event":"command","func":"playVideo","args":""}',
+      "*"
+    );
+  }
 
-}, 3000);
 
-}
+  function closeMissYou() {
 
+    document.getElementById("missYouClosing").style.display = "block";
 
-/* ================= MAKE ME LAUGH ================= */
+    setTimeout(function() {
 
-const laughMessages = [
+      const player = document.getElementById("tuChahiyePlayer");
 
-`Paratha incident ko yaad krlo bas... <b>hammer duun, bihcalii mereko dikane bnaa rhii thii .. aree hann omlet ka glass bhii to kitchen me fer dii thii ?</b> 😭🔨😂`,
+      player.contentWindow.postMessage(
+        '{"event":"command","func":"stopVideo","args":""}',
+        "*"
+      );
 
-`Vo raat 2 bje wala chizz yaad h? 👀😂<br>
-Dekhna waps naa hojaye bathroom k gate apka bhai... <b>chilana</b> 😭✋😂`,
+      document.getElementById("missYou").classList.remove("active");
 
-`Jab main achanak school mein saamne aa jaata hoon naaa... darnaa maattt reee ,, mante thora bhotiya shakal h prr bhoot nuiii h mee 😭😂`,
+      document.getElementById("missYouContent").style.display = "none";
 
-`Aur jab main flirt karta hoon aur aap hasne lagti ho... <b>uff kyaa hasiii h.. kitnee baar dill jitogii... 👀😂</b>`
+      document.getElementById("missYouClosing").style.display = "none";
 
-];
+      document.getElementById("missYouMusicStart").style.display = "block";
 
-function makeMeLaugh() {
+      document.getElementById("home").style.display = "block";
 
-const randomIndex =
-Math.floor(Math.random() * laughMessages.length);
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
 
-document.getElementById("laughText").innerHTML =
-laughMessages[randomIndex];
+    }, 3000);
+  }
 
-}
 
+  /* 😂 MAKE ME LAUGH */
 
-/* ================= QUIZ ================= */
+  const laughMessages = [
 
-const quizQuestions = [
+    "Paratha incident ko yaad krlo bas... hammer duun, bihcalii mereko dikane bnaa rhii thii .. aree hann omlet ka glass bhii to kitchen me fer dii thii ? 😭🔨😂",
 
-{
-question: "What food do you like the most?",
-answers: ["Dosa", "Pizza", "Burger", "Momos"],
-correct: 0
-},
+    "Vo raat 2 bje wala chizz yaad h? 👀😂 Dekhna waps naa hojaye bathroom k gate apka bhai... chilana 😭✋😂",
 
-{
-question: "What's your favourite cartoon?",
-answers: ["Doraemon", "Shinchan", "Tom & Jerry", "Oggy"],
-correct: 1
-},
+    "Jab main achanak school mein saamne aa jaata hoon naaa... darnaa maattt reee ,, mante thora bhotiya shakal h prr bhoot nuiii h mee 😭😂",
 
-{
-question: "What are you scared of?",
-answers: ["Cats", "Stray dogs", "Birds", "Spiders"],
-correct: 1
-},
+    "Aur jab main flirt karta hoon aur aap hasne lagti ho... uff kyaa hasiii h.. kitnee baar dill jitogii... 👀😂"
 
-{
-question: "What do you love doing?",
-answers: ["Dancing", "Running", "Drawing", "Cooking"],
-correct: 0
-},
+  ];
 
-{
-question: "What else are you good at?",
-answers: ["Singing", "Painting", "Football", "Swimming"],
-correct: 0
-},
 
-{
-question: "What's one thing you could probably do forever?",
-answers: ["Sleeping", "Studying", "Cleaning", "Running"],
-correct: 0
-}
+  function randomLaugh() {
 
-];
+    const randomIndex =
+      Math.floor(Math.random() * laughMessages.length);
 
-let currentQuestion = 0;
-let quizScore = 0;
+    document.getElementById("laughMessage").innerText =
+      laughMessages[randomIndex];
+  }
 
-function setupQuiz() {
 
-currentQuestion = 0;
-quizScore = 0;
+  /* 🧠 ANTRAA QUIZ */
 
-showQuizQuestion();
+  const quizQuestions = [
 
-}
+    {
+      question: "What food do you like the most? 🍽️",
+      options: [
+        "A. Pizza",
+        "B. Dosa",
+        "C. Burger",
+        "D. Maggi"
+      ],
+      answer: 1
+    },
 
-function showQuizQuestion() {
+    {
+      question: "What's your favourite cartoon? 📺",
+      options: [
+        "A. Doraemon",
+        "B. Shinchan",
+        "C. Tom & Jerry",
+        "D. Oggy"
+      ],
+      answer: 1
+    },
 
-const quiz = document.getElementById("quiz");
+    {
+      question: "What are you scared of? 🐕",
+      options: [
+        "A. Butterflies",
+        "B. Cats",
+        "C. Stray dogs",
+        "D. Rain"
+      ],
+      answer: 2
+    },
 
-if(currentQuestion >= quizQuestions.length) {
+    {
+      question: "What do you love doing? 💃",
+      options: [
+        "A. Dancing",
+        "B. Gardening",
+        "C. Drawing",
+        "D. Swimming"
+      ],
+      answer: 0
+    },
 
-quiz.innerHTML = `
-<div class="quiz-result">
+    {
+      question: "What else are you good at? 🎤",
+      options: [
+        "A. Singing",
+        "B. Cooking",
+        "C. Painting",
+        "D. Football"
+      ],
+      answer: 0
+    },
 
-🎉 QUIZ COMPLETE<br><br>
+    {
+      question: "What's one thing you could probably do forever? 😴",
+      options: [
+        "A. Running",
+        "B. Sleeping",
+        "C. Studying",
+        "D. Cleaning"
+      ],
+      answer: 1
+    }
 
-Okayyy madammm, not bad 👀😂<br>
+  ];
 
-Lagta hai aapko khud ke baare mein kaafi pata hai. 😭<br><br>
 
-Score: ${quizScore}/6<br><br>
+  let quizIndex = 0;
+  let quizScore = 0;
 
-Ab jaooo... so jaooo 😭✋
 
-</div>
-`;
+  function setupQuiz() {
 
-return;
+    quizIndex = 0;
+    quizScore = 0;
 
-}
+    document.getElementById("quizResult").innerText = "";
 
-const q = quizQuestions[currentQuestion];
+    showQuizQuestion();
+  }
 
-let html = `
-<div class="quiz-question">
-<h3>${currentQuestion + 1}. ${q.question}</h3>
-`;
 
-q.answers.forEach(function(answer,index) {
+  function showQuizQuestion() {
 
-html += `
-<button
-class="quiz-option"
-onclick="answerQuiz(${index})">
-${answer}
-</button>
-`;
+    const area = document.getElementById("quizArea");
 
-});
+    if (quizIndex >= quizQuestions.length) {
 
-html += `</div>`;
+      area.innerHTML = "";
 
-quiz.innerHTML = html;
+      document.getElementById("quizResult").innerHTML =
+        "🎉 QUIZ COMPLETE<br><br>" +
+        "Okayyy madammm, not bad 👀😂<br>" +
+        "Lagta hai aapko khud ke baare mein kaafi pata hai. 😭<br><br>" +
+        "Score: " + quizScore + "/6<br><br>" +
+        "Ab jaooo... so jaooo 😭✋";
 
-}
+      return;
+    }
 
-function answerQuiz(index) {
 
-if(index === quizQuestions[currentQuestion].correct) {
-quizScore++;
-}
+    const q = quizQuestions[quizIndex];
 
-currentQuestion++;
+    let html =
+      "<div class='quiz-question'>" +
+      "Q" + (quizIndex + 1) + ". " +
+      q.question +
+      "</div>";
 
-showQuizQuestion();
+    q.options.forEach(function(option, index) {
 
-}
+      html +=
+        "<button class='quiz-option' onclick='answerQuiz(" +
+        index +
+        ")'>" +
+        option +
+        "</button>";
 
+    });
 
-/* ================= PICK ONE ================= */
+    area.innerHTML = html;
+  }
 
-function pickOne(choice) {
 
-document.getElementById("pickResult").innerHTML =
-`Hmmmm... <b>${choice}</b> 👀😂<br>
-<small>Good choice madammm.</small>`;
+  function answerQuiz(selected) {
 
-}
+    if (selected === quizQuestions[quizIndex].answer) {
 
+      quizScore++;
 
-/* ================= HEART GAME ================= */
+      document.getElementById("quizResult").innerText =
+        "Correcttt 😭❤️";
 
-let heartGameRunning = false;
-let heartGameScore = 0;
-let heartTimer;
+    } else {
 
-function startHeartGame() {
+      document.getElementById("quizResult").innerText =
+        "Wronggg 😂✋";
 
-if(heartGameRunning) return;
+    }
 
-heartGameRunning = true;
-heartGameScore = 0;
+    quizIndex++;
 
-const game = document.getElementById("heartGame");
+    setTimeout(function() {
 
-game.innerHTML = "";
+      showQuizQuestion();
 
-document.getElementById("heartScore").innerText =
-"Score: 0";
+    }, 500);
+  }
 
-spawnHeart();
 
-let timeLeft = 10;
+  /* 👀 PICK ONE */
 
-heartTimer = setInterval(function() {
+  function pickChoice(text) {
 
-timeLeft--;
+    document.getElementById("pickResult").innerText = text;
+  }
 
-if(timeLeft <= 0) {
 
-clearInterval(heartTimer);
+  /* ❤️ HEART GAME */
 
-heartGameRunning = false;
+  let heartScore = 0;
+  let heartTimer;
 
-game.innerHTML = "";
 
-document.getElementById("heartScore").innerText =
-"Final Score: " + heartGameScore + " ❤️";
+  function startHeartGame() {
 
-}
+    const game = document.getElementById("heartGame");
 
-},1000);
+    game.innerHTML = "";
 
-}
+    heartScore = 0;
 
-function spawnHeart() {
+    document.getElementById("heartScore").innerText =
+      "Score: 0";
 
-if(!heartGameRunning) return;
+    createHeart();
 
-const game = document.getElementById("heartGame");
+    clearInterval(heartTimer);
 
-const heart = document.createElement("div");
+    heartTimer = setInterval(function() {
 
-heart.className = "heart";
+      createHeart();
 
-heart.innerHTML = "❤️";
+    }, 800);
 
-heart.style.left =
-Math.random() * 90 + "%";
 
-heart.style.top =
-Math.random() * 80 + "%";
+    setTimeout(function() {
 
-heart.onclick = function() {
+      clearInterval(heartTimer);
 
-heartGameScore++;
+      game.innerHTML =
+        "<div style='text-align:center;padding-top:90px;font-weight:bold;'>" +
+        "Game Over 😭❤️<br><br>" +
+        "Final Score: " +
+        heartScore +
+        "</div>";
 
-document.getElementById("heartScore").innerText =
-"Score: " + heartGameScore;
+    }, 10000);
+  }
 
-heart.remove();
 
-spawnHeart();
+  function createHeart() {
 
-};
+    const game = document.getElementById("heartGame");
 
-game.appendChild(heart);
+    if (!document.getElementById("bored").classList.contains("active")) {
+      return;
+    }
 
-setTimeout(function() {
+    const heart = document.createElement("div");
 
-if(heart.parentElement) {
+    heart.className = "heart";
 
-heart.remove();
+    heart.innerText = "❤️";
 
-spawnHeart();
+    heart.style.left =
+      Math.random() * 85 + "%";
 
-}
+    heart.style.top =
+      Math.random() * 80 + "%";
 
-},900);
 
-}
+    heart.onclick = function() {
 
+      heartScore++;
 
-/* ================= TU CHAHIYE ================= */
+      document.getElementById("heartScore").innerText =
+        "Score: " + heartScore;
 
-function startMissYou() {
+      heart.remove();
 
-document.getElementById("missMusicStart").style.display = "none";
+    };
 
-document.getElementById("missYouContent").style.display = "block";
 
-const player = document.getElementById("missYouPlayer");
+    game.appendChild(heart);
 
-player.contentWindow.postMessage(
-'{"event":"command","func":"playVideo","args":""}',
-"*"
-);
 
-}
+    setTimeout(function() {
 
-function closeMissYou() {
+      if (heart.parentElement) {
+        heart.remove();
+      }
 
-document.getElementById("missClosing").style.display = "block";
-
-setTimeout(function() {
-
-const player = document.getElementById("missYouPlayer");
-
-player.contentWindow.postMessage(
-'{"event":"command","func":"stopVideo","args":""}',
-"*"
-);
-
-document.getElementById("missYou").classList.remove("active");
-
-document.getElementById("missYouContent").style.display = "none";
-
-document.getElementById("missClosing").style.display = "none";
-
-document.getElementById("missMusicStart").style.display = "block";
-
-document.getElementById("home").style.display = "block";
-
-window.scrollTo({
-top: 0,
-behavior: "smooth"
-});
-
-},3000);
-
-}
+    }, 1200);
+  }
 
 </script>
 
 </body>
 </html>
-```
