@@ -161,7 +161,6 @@
       font-weight: bold;
     }
 
-
     /* =====================================================
        COUPON BOOK
     ===================================================== */
@@ -193,7 +192,6 @@
       text-align: center;
       font-style: italic;
     }
-
 
     /* =====================================================
        MEMORIES ALBUM
@@ -316,7 +314,6 @@
     }
 
     @keyframes floatHeart {
-
       0% {
         transform: translateY(30px) rotate(0deg);
         opacity: 0;
@@ -339,9 +336,7 @@
         transform: translateY(-170px) rotate(-12deg);
         opacity: 0;
       }
-
     }
-
 
     /* =====================================================
        BORED ZONE
@@ -427,6 +422,19 @@
       font-size: 30px;
       cursor: pointer;
       user-select: none;
+      animation: heartPop 0.2s ease;
+    }
+
+    @keyframes heartPop {
+      from {
+        transform: scale(0.4);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
 
     .heart-score {
@@ -434,7 +442,6 @@
       font-weight: bold;
       margin-top: 10px;
     }
-
 
     /* =====================================================
        SOMETHING RANDOM
@@ -506,7 +513,6 @@
       letter-spacing: 5px;
     }
 
-
     /* =====================================================
        MOBILE
     ===================================================== */
@@ -535,11 +541,9 @@
   </style>
 </head>
 
-
 <body>
 
 <div class="container">
-
 
   <!-- =====================================================
        HOME
@@ -557,7 +561,6 @@
       src="images/p1.jpg"
       class="hero-photo"
       alt="Antraa">
-
 
     <div class="message">
 
@@ -581,11 +584,9 @@
 
     </div>
 
-
     <h2 class="section-title">
       WHAT DO YOU NEED RIGHT NOW? 👀
     </h2>
-
 
     <div class="mood-grid">
 
@@ -616,11 +617,9 @@
 
     </div>
 
-
     <h2 class="section-title">
       Or maybe... 👀
     </h2>
-
 
     <div class="mood-grid">
 
@@ -658,7 +657,6 @@
       🎵 Tap to play
     </button>
 
-
     <div id="notGoodContent" class="hidden-content">
 
       <div class="youtube-box">
@@ -667,17 +665,15 @@
           id="notGoodPlayer"
           width="1"
           height="1"
-          src="https://www.youtube.com/embed/2Vv-BfVoq4g?enablejsapi=1"
+          src="https://www.youtube.com/embed/akjdj6iHttY?enablejsapi=1"
           allow="autoplay">
         </iframe>
 
       </div>
 
-
       <img
         src="images/p2.jpg"
         class="section-photo">
-
 
       <div class="message">
 
@@ -703,18 +699,15 @@
 
       </div>
 
-
       <button class="read-button" onclick="closeNotGood()">
         Read ❤️
       </button>
-
 
       <div id="notGoodClosing" class="closing-text">
         Bas ab thoda rest karnaaa bbyy. ❤️
       </div>
 
     </div>
-
 
     <button class="back-button" onclick="goHome()">
       ← Back
@@ -737,7 +730,6 @@
       🎵 Tap to play
     </button>
 
-
     <div id="smileContent" class="hidden-content">
 
       <div class="youtube-box">
@@ -746,22 +738,19 @@
           id="smilePlayer"
           width="1"
           height="1"
-          src="https://www.youtube.com/embed/2Vv-BfVoq4g?enablejsapi=1"
+          src="https://www.youtube.com/embed/f_UWq8lXfYo?enablejsapi=1"
           allow="autoplay">
         </iframe>
 
       </div>
 
-
       <img
         src="images/p3.jpg"
         class="section-photo funny-photo">
 
-
       <img
         src="images/p4.jpg"
         class="section-photo funny-photo">
-
 
       <div class="message">
 
@@ -802,18 +791,15 @@
 
       </div>
 
-
       <button class="read-button" onclick="closeSmile()">
         Read ❤️
       </button>
-
 
       <div id="smileClosing" class="closing-text">
         Bas ab smile karte rehnaaa. 😂❤️
       </div>
 
     </div>
-
 
     <button class="back-button" onclick="goHome()">
       ← Back
@@ -836,7 +822,6 @@
       🎵 Tap to play
     </button>
 
-
     <div id="boredContent" class="hidden-content">
 
       <div class="youtube-box">
@@ -850,7 +835,6 @@
         </iframe>
 
       </div>
-
 
       <div class="activity-card">
 
@@ -866,7 +850,6 @@
 
       </div>
 
-
       <div class="activity-card">
 
         <h3>🧠 Antraa Quiz</h3>
@@ -874,7 +857,6 @@
         <div id="quizArea"></div>
 
       </div>
-
 
       <div class="activity-card">
 
@@ -904,7 +886,6 @@
 
       </div>
 
-
       <div class="activity-card">
 
         <h3>❤️ Catch The Hearts</h3>
@@ -912,23 +893,20 @@
         <div class="heart-game" id="heartGame"></div>
 
         <div class="heart-score">
-          Score: <span id="heartScore">0</span>
+          Hearts: <span id="heartScore">0/20</span>
         </div>
 
       </div>
 
-
       <button class="read-button" onclick="closeBored()">
         Done ❤️
       </button>
-
 
       <div id="boredClosing" class="closing-text">
         Okayyy, ab bore hona band karo 😂❤️
       </div>
 
     </div>
-
 
     <button class="back-button" onclick="goHome()">
       ← Back
@@ -951,7 +929,6 @@
       🎵 Tap to play
     </button>
 
-
     <div id="missYouContent" class="hidden-content">
 
       <div class="youtube-box">
@@ -960,22 +937,19 @@
           id="missYouPlayer"
           width="1"
           height="1"
-          src="https://www.youtube.com/embed/qFkNATtc3mc?enablejsapi=1"
+          src="https://www.youtube.com/embed/XYv5zG97QsM?enablejsapi=1"
           allow="autoplay">
         </iframe>
 
       </div>
 
-
       <img
         src="images/p5.jpg"
         class="section-photo">
 
-
       <img
         src="images/p6.jpg"
         class="section-photo">
-
 
       <div class="message">
 
@@ -1014,18 +988,15 @@
 
       </div>
 
-
       <button class="read-button" onclick="closeMissYou()">
         Read ❤️
       </button>
-
 
       <div id="missYouClosing" class="closing-text">
         Ab itna yaad bhi mat karnaaa 😂❤️
       </div>
 
     </div>
-
 
     <button class="back-button" onclick="goHome()">
       ← Back
@@ -1048,7 +1019,6 @@
       🎵 Tap to play
     </button>
 
-
     <div id="sleepyContent" class="hidden-content">
 
       <div class="youtube-box">
@@ -1057,17 +1027,15 @@
           id="sleepyPlayer"
           width="1"
           height="1"
-          src="https://www.youtube.com/embed/2Vv-BfVoq4g?enablejsapi=1"
+          src="https://www.youtube.com/embed/PU5WZftoh_A?enablejsapi=1"
           allow="autoplay">
         </iframe>
 
       </div>
 
-
       <img
         src="images/p7.jpg"
         class="section-photo">
-
 
       <div class="message">
 
@@ -1090,18 +1058,15 @@
 
       </div>
 
-
       <button class="read-button" onclick="closeSleepy()">
         Read ❤️
       </button>
-
 
       <div id="sleepyClosing" class="closing-text">
         Ab phone rakho aur so jaooo. 😭❤️
       </div>
 
     </div>
-
 
     <button class="back-button" onclick="goHome()">
       ← Back
@@ -1124,7 +1089,6 @@
       🎵 Tap to play
     </button>
 
-
     <div id="couponContent" class="hidden-content">
 
       <div class="youtube-box">
@@ -1139,7 +1103,6 @@
 
       </div>
 
-
       <div class="message">
 
         Okayyy bbyy... welcome to your very official,
@@ -1150,7 +1113,6 @@
         some may be slightly dangerous for me. 👀😂
 
       </div>
-
 
       <div class="coupon">
 
@@ -1176,7 +1138,6 @@
 
       </div>
 
-
       <div class="coupon">
 
         <h3>🎟️ YOU PICK THE MOVIE 🎬</h3>
@@ -1200,7 +1161,6 @@
 
       </div>
 
-
       <div class="coupon">
 
         <h3>🎟️ SNACK PASS 🍫</h3>
@@ -1223,7 +1183,6 @@
         </div>
 
       </div>
-
 
       <div class="coupon">
 
@@ -1249,7 +1208,6 @@
 
       </div>
 
-
       <div class="coupon">
 
         <h3>🎟️ YOUR CHOICE 👑</h3>
@@ -1274,18 +1232,15 @@
 
       </div>
 
-
       <button class="read-button" onclick="closeCouponBook()">
         Done ❤️
       </button>
-
 
       <div id="couponClosing" class="closing-text">
         Coupon book officially activated. 😭❤️
       </div>
 
     </div>
-
 
     <button class="back-button" onclick="goHome()">
       ← Back
@@ -1296,7 +1251,7 @@
 
   <!-- =====================================================
        OUR LITTLE MEMORIES
-  ===================================================== -->
+    ===================================================== -->
 
   <div id="memories" class="content-box">
 
@@ -1304,11 +1259,9 @@
       📸 Our Little Memories
     </h2>
 
-
     <button class="music-button" onclick="startMemories()">
       🎵 Tap to play
     </button>
-
 
     <div id="memoriesContent" class="hidden-content">
 
@@ -1324,7 +1277,6 @@
 
       </div>
 
-
       <div class="memory-album" id="memoryAlbum">
 
         <div class="album-intro">
@@ -1339,116 +1291,65 @@
 
         </div>
 
-
         <div class="memory-grid">
 
-
           <div class="memory-card">
-
-            <img
-              src="images/m1.jpg"
-              alt="Memory 1">
-
+            <img src="images/m1.jpg" alt="Memory 1">
             <div class="memory-caption">
               🫶🏻 little moment
             </div>
-
           </div>
 
-
           <div class="memory-card">
-
-            <img
-              src="images/m2.jpg"
-              alt="Memory 2">
-
+            <img src="images/m2.jpg" alt="Memory 2">
             <div class="memory-caption">
               😂 one of those moments
             </div>
-
           </div>
 
-
           <div class="memory-card">
-
-            <img
-              src="images/m3.jpg"
-              alt="Memory 3">
-
+            <img src="images/m3.jpg" alt="Memory 3">
             <div class="memory-caption">
               ❤️ kept this one
             </div>
-
           </div>
 
-
           <div class="memory-card">
-
-            <img
-              src="images/m4.jpg"
-              alt="Memory 4">
-
+            <img src="images/m4.jpg" alt="Memory 4">
             <div class="memory-caption">
               👀 remember this?
             </div>
-
           </div>
 
-
           <div class="memory-card">
-
-            <img
-              src="images/m5.jpg"
-              alt="Memory 5">
-
+            <img src="images/m5.jpg" alt="Memory 5">
             <div class="memory-caption">
               🌸 another little memory
             </div>
-
           </div>
 
-
           <div class="memory-card">
-
-            <img
-              src="images/m6.jpg"
-              alt="Memory 6">
-
+            <img src="images/m6.jpg" alt="Memory 6">
             <div class="memory-caption">
               🥹 this one too
             </div>
-
           </div>
 
-
           <div class="memory-card">
-
-            <img
-              src="images/m7.jpg"
-              alt="Memory 7">
-
+            <img src="images/m7.jpg" alt="Memory 7">
             <div class="memory-caption">
               🫂 one more
             </div>
-
           </div>
 
-
           <div class="memory-card">
-
-            <img
-              src="images/m8.jpg"
-              alt="Memory 8">
-
+            <img src="images/m8.jpg" alt="Memory 8">
             <div class="memory-caption">
               ❤️ and another one
             </div>
-
           </div>
 
-
         </div>
-
 
         <div class="album-bottom">
 
@@ -1463,18 +1364,15 @@
 
       </div>
 
-
       <button class="read-button" onclick="closeMemories()">
         Done ❤️
       </button>
-
 
       <div id="memoriesClosing" class="closing-text">
         More memories loading... 👀❤️
       </div>
 
     </div>
-
 
     <button class="back-button" onclick="goHome()">
       ← Back
@@ -1485,7 +1383,7 @@
 
   <!-- =====================================================
        SOMETHING RANDOM
-       NO PHOTO
+       NO PHOTO / NO MUSIC
   ===================================================== -->
 
   <div id="random" class="content-box">
@@ -1495,24 +1393,10 @@
     </h2>
 
     <button class="music-button" onclick="startRandom()">
-      🎵 Tap to play
+      🎲 Enter Random Zone
     </button>
 
-
     <div id="randomContent" class="hidden-content">
-
-      <div class="youtube-box">
-
-        <iframe
-          id="randomPlayer"
-          width="1"
-          height="1"
-          src="https://www.youtube.com/embed/Mo5tQDcs__g?enablejsapi=1"
-          allow="autoplay">
-        </iframe>
-
-      </div>
-
 
       <div class="message">
 
@@ -1525,7 +1409,6 @@
         No photos. No serious stuff. Just pure randomnn energy. 😂❤️
 
       </div>
-
 
       <div class="random-zone">
 
@@ -1543,7 +1426,6 @@
 
       </div>
 
-
       <div class="random-zone">
 
         <h3>💌 Totally Random Compliment</h3>
@@ -1559,7 +1441,6 @@
         </button>
 
       </div>
-
 
       <div class="random-zone">
 
@@ -1604,7 +1485,6 @@
 
       </div>
 
-
       <div class="random-zone">
 
         <h3>🎯 Your Completely Random Challenge</h3>
@@ -1622,7 +1502,6 @@
         </button>
 
       </div>
-
 
       <div class="random-zone">
 
@@ -1642,18 +1521,15 @@
 
       </div>
 
-
       <button class="read-button" onclick="closeRandom()">
         Done ❤️
       </button>
-
 
       <div id="randomClosing" class="closing-text">
         Okayyy random section successfully completed. 😂❤️
       </div>
 
     </div>
-
 
     <button class="back-button" onclick="goHome()">
       ← Back
@@ -1666,12 +1542,75 @@
 
 <script>
 
-
   /* =====================================================
      GENERAL
   ===================================================== */
 
+  let heartInterval;
+  let heartTimeouts = [];
+  let heartGameRun = 0;
+
+  const TOTAL_HEARTS = 20;
+
+
+  function clearHeartGame() {
+
+    clearInterval(heartInterval);
+
+    heartTimeouts.forEach(timeout => {
+      clearTimeout(timeout);
+    });
+
+    heartTimeouts = [];
+
+    heartGameRun++;
+
+  }
+
+
+  function resetSectionStates() {
+
+    clearHeartGame();
+
+    document.querySelectorAll(".content-box").forEach(section => {
+
+      section.classList.remove("active");
+
+      const content =
+        section.querySelector(".hidden-content");
+
+      const musicButton =
+        section.querySelector(".music-button");
+
+      if (content) {
+        content.style.display = "none";
+      }
+
+      if (musicButton) {
+        musicButton.style.display = "block";
+      }
+
+      section
+        .querySelectorAll(".closing-text")
+        .forEach(text => {
+          text.style.display = "none";
+        });
+
+    });
+
+
+    document
+      .querySelectorAll(".floating-heart")
+      .forEach(heart => heart.remove());
+
+  }
+
+
   function openSection(id) {
+
+    stopAllMusic();
+
+    resetSectionStates();
 
     document.getElementById("home").style.display = "none";
 
@@ -1693,9 +1632,7 @@
 
     stopAllMusic();
 
-    document.querySelectorAll(".content-box").forEach(section => {
-      section.classList.remove("active");
-    });
+    resetSectionStates();
 
     document.getElementById("home").style.display = "block";
 
@@ -1752,9 +1689,8 @@
     stopYouTube("sleepyPlayer");
     stopYouTube("uskaHiBananaPlayer");
     stopYouTube("memoriesPlayer");
-    stopYouTube("randomPlayer");
 
-    clearInterval(heartInterval);
+    clearHeartGame();
 
   }
 
@@ -1904,6 +1840,8 @@
     setTimeout(() => {
 
       stopYouTube("ghungrooPlayer");
+
+      clearHeartGame();
 
       document.getElementById("bored").classList.remove("active");
 
@@ -2086,26 +2024,50 @@
 
 
   /* =====================================================
-     HEART GAME
+     HEART GAME — EXACTLY 20 HEARTS
   ===================================================== */
 
   let heartScore = 0;
-  let heartInterval;
+  let heartsSpawned = 0;
+  let heartsResolved = 0;
 
 
   function startHeartGame() {
 
-    heartScore = 0;
+    clearHeartGame();
 
-    document.getElementById("heartScore").innerText = heartScore;
+    heartScore = 0;
+    heartsSpawned = 0;
+    heartsResolved = 0;
+
+    const gameRun = heartGameRun;
 
     const game = document.getElementById("heartGame");
 
     game.innerHTML = "";
 
-    clearInterval(heartInterval);
+    document.getElementById("heartScore").innerText =
+      "0/20";
+
 
     heartInterval = setInterval(() => {
+
+      if (gameRun !== heartGameRun) {
+        clearInterval(heartInterval);
+        return;
+      }
+
+
+      if (heartsSpawned >= TOTAL_HEARTS) {
+
+        clearInterval(heartInterval);
+
+        return;
+
+      }
+
+
+      heartsSpawned++;
 
       const heart = document.createElement("div");
 
@@ -2117,30 +2079,90 @@
         Math.random() * 85 + "%";
 
       heart.style.top =
-        Math.random() * 80 + "%";
+        Math.random() * 75 + "%";
 
-      heart.onclick = function () {
 
-        heartScore++;
+      let resolved = false;
 
-        document.getElementById("heartScore").innerText =
-          heartScore;
 
-        heart.remove();
+      function resolveHeart(caught) {
 
-      };
+        if (resolved || gameRun !== heartGameRun) {
+          return;
+        }
 
-      game.appendChild(heart);
+        resolved = true;
 
-      setTimeout(() => {
+
+        if (caught) {
+
+          heartScore++;
+
+          document.getElementById("heartScore").innerText =
+            heartScore + "/20";
+
+        }
+
+
+        heartsResolved++;
+
 
         if (heart.parentNode) {
           heart.remove();
         }
 
+
+        if (heartsResolved === TOTAL_HEARTS) {
+
+          clearInterval(heartInterval);
+
+          heartTimeouts.forEach(timeout => {
+            clearTimeout(timeout);
+          });
+
+          heartTimeouts = [];
+
+
+          game.innerHTML = `
+            <div style="
+              height:100%;
+              display:flex;
+              align-items:center;
+              justify-content:center;
+              text-align:center;
+              padding:20px;
+              font-weight:bold;
+              line-height:1.6;
+            ">
+              Doneeee! ❤️<br>
+              You caught ${heartScore}/20 hearts! 😭😂❤️
+            </div>
+          `;
+
+        }
+
+      }
+
+
+      heart.onclick = function() {
+        resolveHeart(true);
+      };
+
+
+      game.appendChild(heart);
+
+
+      const timeout = setTimeout(() => {
+
+        resolveHeart(false);
+
       }, 1500);
 
-    }, 900);
+
+      heartTimeouts.push(timeout);
+
+
+    }, 750);
 
   }
 
@@ -2478,8 +2500,6 @@
 
     document.getElementById("heartBurst").innerText = "👀";
 
-    playYouTube("randomPlayer");
-
   }
 
 
@@ -2581,8 +2601,6 @@
     document.getElementById("randomClosing").style.display = "block";
 
     setTimeout(() => {
-
-      stopYouTube("randomPlayer");
 
       document.getElementById("random").classList.remove("active");
 
