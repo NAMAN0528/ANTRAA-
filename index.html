@@ -31,7 +31,7 @@
     /* HERO */
 
     .hero {
-      background: rgba(255,255,255,0.82);
+      background: rgba(255,255,255,0.84);
       border-radius: 28px;
       padding: 25px 20px;
       text-align: center;
@@ -43,16 +43,17 @@
       font-size: 31px;
       margin-bottom: 18px;
     }
-.hero-photo {
-  width: 100%;
-  height: auto;
-  max-height: none;
-  object-fit: contain;
-  border-radius: 22px;
-  margin-bottom: 20px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-  display: block;
-}
+
+    .hero-photo {
+      width: 100%;
+      height: auto;
+      max-height: none;
+      object-fit: contain;
+      border-radius: 22px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+      display: block;
+    }
 
     .intro {
       font-size: 16px;
@@ -81,7 +82,7 @@
       min-height: 78px;
       padding: 17px 18px;
       border-radius: 20px;
-      background: rgba(255,255,255,0.88);
+      background: rgba(255,255,255,0.9);
       box-shadow: 0 7px 22px rgba(0,0,0,0.07);
       text-align: left;
       font-size: 17px;
@@ -105,6 +106,118 @@
       opacity: 0.65;
     }
 
+    /* CONTENT SECTIONS */
+
+    .content-box {
+      display: none;
+      background: rgba(255,255,255,0.9);
+      border-radius: 28px;
+      padding: 22px 18px;
+      margin-top: 20px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+      animation: appear 0.4s ease;
+    }
+
+    .content-box.active {
+      display: block;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .content-title {
+      font-size: 25px;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+
+    .section-photo {
+      width: 100%;
+      height: auto;
+      border-radius: 22px;
+      display: block;
+      margin: 0 auto 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    }
+
+    .message {
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    /* MUSIC INTRO */
+
+    .music-start {
+      text-align: center;
+      padding: 35px 10px;
+    }
+
+    .music-start h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .music-start p {
+      font-size: 14px;
+      opacity: 0.65;
+      margin-bottom: 22px;
+    }
+
+    .play-button {
+      border: none;
+      background: #ff7da5;
+      color: white;
+      padding: 16px 25px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 7px 20px rgba(255,125,165,0.3);
+    }
+
+    /* YOUTUBE PLAYER */
+
+    .youtube-box {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* READ BUTTON */
+
+    .read-button {
+      width: 100%;
+      border: none;
+      margin-top: 25px;
+      padding: 16px;
+      border-radius: 50px;
+      background: #333;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .closing {
+      text-align: center;
+      font-size: 15px;
+      margin-top: 15px;
+      opacity: 0.65;
+      display: none;
+    }
+
     /* MAYBE */
 
     .maybe-section {
@@ -116,36 +229,22 @@
       gap: 12px;
     }
 
-    /* FOOTER */
-
     .footer {
       text-align: center;
       margin-top: 35px;
       font-size: 13px;
       opacity: 0.55;
     }
-
-    @media (max-width: 360px) {
-      .hero h1 {
-        font-size: 27px;
-      }
-
-      .hero {
-        padding: 20px 16px;
-      }
-
-      .intro {
-        font-size: 15px;
-      }
-    }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
+<div class="container">
 
-    <!-- HERO -->
+  <!-- HOMEPAGE -->
+
+  <div id="home">
 
     <div class="hero">
 
@@ -159,9 +258,7 @@
 
       <div class="intro">
 
-        <p>
-          Heyyy Antraaaa ❤️
-        </p>
+        <p>Heyyy Antraaaa ❤️</p>
 
         <br>
 
@@ -206,15 +303,13 @@
     </div>
 
 
-    <!-- MOOD SECTION -->
-
     <div class="section-title">
       What do you need right now? 👀
     </div>
 
     <div class="mood-grid">
 
-      <button class="mood-card">
+      <button class="mood-card" onclick="openSection('notGood')">
         🌸 I'm not feeling good
         <span>A little comfort might help.</span>
       </button>
@@ -247,8 +342,6 @@
     </div>
 
 
-    <!-- MAYBE SECTION -->
-
     <div class="maybe-section">
 
       <div class="section-title">
@@ -276,12 +369,201 @@
 
     </div>
 
+  </div>
 
-    <div class="footer">
-      Made specially for Antraa ❤️
+
+  <!-- NOT FEELING GOOD -->
+
+  <div id="notGood" class="content-box">
+
+    <!-- MUSIC START SCREEN -->
+
+    <div id="musicStart" class="music-start">
+
+      <h2>🌸 Just for youuu</h2>
+
+      <p>
+        Before you see everything...
+        there's a little something playing for you. ❤️
+      </p>
+
+      <button class="play-button" onclick="startIktara()">
+        🎵 Tap to play
+      </button>
+
+    </div>
+
+
+    <!-- HIDDEN YOUTUBE PLAYER -->
+
+    <div class="youtube-box">
+
+      <iframe
+        id="iktaraPlayer"
+        width="1"
+        height="1"
+        src="https://www.youtube.com/embed/ZlOZktsODpA?enablejsapi=1"
+        title="Iktara"
+        frameborder="0"
+        allow="autoplay"
+      ></iframe>
+
+    </div>
+
+
+    <!-- ACTUAL CONTENT -->
+
+    <div id="notGoodContent" style="display:none;">
+
+      <h2 class="content-title">
+        🌸 Heyyy bbyy ❤️
+      </h2>
+
+      <img
+        src="images/p2.jpg"
+        alt="Antraa"
+        class="section-photo"
+      >
+
+      <div class="message">
+
+        <p>
+          it's completely okayii . ❤️
+        </p>
+
+        <br>
+
+        <p>
+          Periods aur hormonal changes ki wajah se aisa feel hona normal hai,
+          so don't worry too much about ittt.
+        </p>
+
+        <br>
+
+        <p>
+          Bas thoda rest kar, comfy ho jaa, heating pad apne paas rkhna
+          and apna dhyaan rakhnaaa. 🌸
+        </p>
+
+        <br>
+
+        <p>
+          Aaj zyada strong banne ki zarurat nahi hai 😂
+          Jo mann kare karo, araam karo, kuch achha khao and bas relaxxxx.
+        </p>
+
+        <br>
+
+        <p>
+          Aur haannn, agar kisi bhi cheez ki zarurat ho ya bas baat karne
+          ka mann kareee, <b>I'm hereee.</b> 🫶🏻
+        </p>
+
+        <br>
+
+        <p>
+          I know main abhi tere paas nahi hoon, but at least itna toh kar
+          hi sakta hoon ki jab bhi tu ye padhe, tujhe lage ki koi hai
+          jo tere saath hai. ❤️
+        </p>
+
+        <br>
+
+        <p>
+          Andddd bbyy… thoda sa smile kar denaaa. 😭❤️
+        </p>
+
+      </div>
+
+
+      <button class="read-button" onclick="closeNotGood()">
+        Read ❤️
+      </button>
+
+      <div id="closingText" class="closing">
+        Okayyy bbyy... see you in a bit 🌸
+      </div>
+
     </div>
 
   </div>
+
+
+  <div class="footer">
+    Made specially for Antraa ❤️
+  </div>
+
+</div>
+
+
+<script>
+
+  function openSection(id) {
+
+    document.getElementById("home").style.display = "none";
+
+    document.querySelectorAll(".content-box").forEach(function(box) {
+      box.classList.remove("active");
+    });
+
+    document.getElementById(id).classList.add("active");
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+
+  function startIktara() {
+
+    document.getElementById("musicStart").style.display = "none";
+
+    document.getElementById("notGoodContent").style.display = "block";
+
+    const player = document.getElementById("iktaraPlayer");
+
+    player.contentWindow.postMessage(
+      '{"event":"command","func":"playVideo","args":""}',
+      "*"
+    );
+
+  }
+
+
+  function closeNotGood() {
+
+    document.getElementById("closingText").style.display = "block";
+
+    setTimeout(function() {
+
+      const player = document.getElementById("iktaraPlayer");
+
+      player.contentWindow.postMessage(
+        '{"event":"command","func":"stopVideo","args":""}',
+        "*"
+      );
+
+      document.getElementById("notGood").classList.remove("active");
+
+      document.getElementById("notGoodContent").style.display = "none";
+
+      document.getElementById("closingText").style.display = "none";
+
+      document.getElementById("musicStart").style.display = "block";
+
+      document.getElementById("home").style.display = "block";
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    }, 3000);
+
+  }
+
+</script>
 
 </body>
 </html>
