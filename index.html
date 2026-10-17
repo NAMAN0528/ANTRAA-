@@ -162,7 +162,7 @@
       font-weight: bold;
     }
 
-    /* Bored Zone */
+    /* BORED ZONE */
 
     .activity-card {
       background: white;
@@ -501,6 +501,7 @@
     <div id="boredContent" class="hidden-content">
 
       <div class="message">
+
         Heyyy bbyyy 😂❤️<br><br>
 
         Bore ho rahi hooo?<br>
@@ -512,6 +513,7 @@
         kuch funny, kuch random, aur kuch aisi hain jinka koi matlab hi nahi hai 😭<br><br>
 
         Chalooo ab boredom ko khatam karte hain. 👀👇
+
       </div>
 
 
@@ -542,7 +544,7 @@
 
       <div class="activity-card">
 
-        <h3>🧠 How Well Do You Know Me?</h3>
+        <h3>🧠 How Well Do You Know Antraa?</h3>
 
         <div id="quizArea"></div>
 
@@ -561,19 +563,27 @@
 
         <div class="pick-buttons">
 
-          <button class="pick-button" onclick="pickChoice('Dosa wins. Obviously. 😭❤️')">
+          <button
+            class="pick-button"
+            onclick="pickChoice('Dosa wins. Obviously. 😭❤️')">
             🥞 Dosa
           </button>
 
-          <button class="pick-button" onclick="pickChoice('Movie nighttt 🎬😂')">
+          <button
+            class="pick-button"
+            onclick="pickChoice('Movie nighttt 🎬😂')">
             🎬 Movie
           </button>
 
-          <button class="pick-button" onclick="pickChoice('Sleeping wins this round. 😴')">
+          <button
+            class="pick-button"
+            onclick="pickChoice('Sleeping wins this round. 😴')">
             😴 Sleep
           </button>
 
-          <button class="pick-button" onclick="pickChoice('Okayyy dancer mode ON 💃😂')">
+          <button
+            class="pick-button"
+            onclick="pickChoice('Okayyy dancer mode ON 💃😂')">
             💃 Dance
           </button>
 
@@ -835,23 +845,18 @@
   }
 
 
-  /* 😂 RANDOM LAUGH */
+  /* 😂 MAKE ME LAUGH */
 
   const laughMessages = [
 
-    "Jab hasne ka mann kare toh mera chehra dekh lena 😭✋😂",
+    "Paratha incident ko yaad krlo bas... hammer duun, bihcalii mereko dikane bnaa rhii thii .. aree hann omlet ka glass bhii to kitchen me fer dii thii ? 😭🔨😂",
 
-    "Paratha incident ko yaad karo... bas. 😭😂",
+    "Vo raat 2 bje wala chizz yaad h? 👀😂 Dekhna waps naa hojaye bathroom k gate apka bhai... chilana 😭✋😂",
 
-    "Bathroom ka darwazaa lock kar lenaaa warna sequel fir aa jayega 👻😭",
+    "Jab main achanak school mein saamne aa jaata hoon naaa... darnaa maattt reee ,, mante thora bhotiya shakal h prr bhoot nuiii h mee 😭😂",
 
-    "School mein main achanak saamne aa gaya toh iss baar chillana mat 😂✋",
+    "Aur jab main flirt karta hoon aur aap hasne lagti ho... uff kyaa hasiii h.. kitnee baar dill jitogii... 👀😂"
 
-    "Aap jab flirt sunke hasne lagti ho na... haan haan, notice karta hoon 👀😂",
-
-    "Dosa khaane ke baad duniya automatically thodi better lagti hai. 😭❤️",
-
-    "Shinchan dekhne ka mann kar raha hoga abhi. Don't lie. 😂"
   ];
 
 
@@ -865,34 +870,12 @@
   }
 
 
-  /* 🧠 QUIZ */
+  /* 🧠 ANTRAA QUIZ */
 
   const quizQuestions = [
 
     {
-      question: "What do I usually do when I suddenly see you at school?",
-      options: [
-        "A. Walk away...",
-        "B. Suddenly appear in front of you 😂",
-        "C. Hide...",
-        "D. Run away..."
-      ],
-      answer: 1
-    },
-
-    {
-      question: "What happens when I flirt with you?",
-      options: [
-        "A. Ignore",
-        "B. Angry",
-        "C. Start laughing",
-        "D. Disappear"
-      ],
-      answer: 2
-    },
-
-    {
-      question: "What food do you like the most?",
+      question: "What food do you like the most? 🍽️",
       options: [
         "A. Pizza",
         "B. Dosa",
@@ -903,7 +886,7 @@
     },
 
     {
-      question: "What cartoon do you like?",
+      question: "What's your favourite cartoon? 📺",
       options: [
         "A. Doraemon",
         "B. Shinchan",
@@ -914,25 +897,47 @@
     },
 
     {
-      question: "What happens when you see a stray dog? 🐕",
+      question: "What are you scared of? 🐕",
       options: [
-        "A. Aage hi nahi badh paati, ekdum darr se paani-paani ho jaati ho 😭",
-        "B. Awww cute!",
-        "C. Run toward it",
-        "D. Try to pet it"
+        "A. Butterflies",
+        "B. Cats",
+        "C. Stray dogs",
+        "D. Rain"
+      ],
+      answer: 2
+    },
+
+    {
+      question: "What do you love doing? 💃",
+      options: [
+        "A. Dancing",
+        "B. Gardening",
+        "C. Drawing",
+        "D. Swimming"
       ],
       answer: 0
     },
 
     {
-      question: "What do I think you should be doing instead of scrolling your phone right now? 👀",
+      question: "What else are you good at? 🎤",
       options: [
-        "A. Sleeping 😴",
-        "B. Eating dosa",
-        "C. Dancing 💃",
-        "D. Playing mobile games 🎮"
+        "A. Singing",
+        "B. Cooking",
+        "C. Painting",
+        "D. Football"
       ],
       answer: 0
+    },
+
+    {
+      question: "What's one thing you could probably do forever? 😴",
+      options: [
+        "A. Running",
+        "B. Sleeping",
+        "C. Studying",
+        "D. Cleaning"
+      ],
+      answer: 1
     }
 
   ];
@@ -964,7 +969,7 @@
       document.getElementById("quizResult").innerHTML =
         "🎉 QUIZ COMPLETE<br><br>" +
         "Okayyy madammm, not bad 👀😂<br>" +
-        "Lagta hai mujhe kaafi observe kiya hai aapne. 😭<br><br>" +
+        "Lagta hai aapko khud ke baare mein kaafi pata hai. 😭<br><br>" +
         "Score: " + quizScore + "/6<br><br>" +
         "Ab jaooo... so jaooo 😭✋";
 
